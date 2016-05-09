@@ -13,7 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+import UserList
+from django.conf.urls import url, include, patterns
 from django.contrib import admin
 from rest_framework import routers
 
@@ -23,13 +24,15 @@ from sfc import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups',views.GroupViewSet)
-router.register(r'sfs',views.SFViewSet)
-router.register(r'sffs',views.SFFViewSet)
-router.register(r'interfaces',views.InterfaceViewSet)
-
+router.register(r'service_function',views.service_function_ViewSet)
+router.register(r'service_function_forwarder',views.service_function_forwarder_ViewSet)
+router.register(r'service_function_chain',views.service_function_chain_ViewSet)
+router.register(r'data_plane_locator',views.data_plane_locator_ViewSet)
+router.register(r'service_function_locator',views.service_function_locator_ViewSet)
+router.register(r'rendered_service_path',views.rendered_service_path_ViewSet)
+router.register(r'rendered_service_path_hop_locator',views.rendered_service_path_hop_locator_ViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
