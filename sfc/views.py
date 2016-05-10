@@ -55,6 +55,3 @@ class rendered_service_path_ViewSet(viewsets.ModelViewSet):
 class rendered_service_path_hop_locator_ViewSet(viewsets.ModelViewSet):
     queryset = rendered_service_path_hop_locator.objects.all()
     serializer_class = rendered_service_path_hop_locator_Serializer
-
-
-

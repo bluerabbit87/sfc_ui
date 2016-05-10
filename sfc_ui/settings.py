@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'vim',
     'sfc',
     'rest_framework',
     'django.contrib.admin',
@@ -126,3 +127,4 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
