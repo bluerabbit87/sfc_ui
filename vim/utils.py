@@ -16,7 +16,7 @@ def print_values(val, type):
         print('\n')
 
 
-def print_values_server(val, server_id, type):
+def print_values_server(val, server_id, type = ""):
     if type == 'ports':
         val_list = val['ports']
 

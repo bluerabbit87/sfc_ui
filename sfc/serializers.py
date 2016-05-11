@@ -50,7 +50,7 @@ class data_plane_locator_Serializer(serializers.ModelSerializer):
 class service_function_chain_Serializer(serializers.ModelSerializer):
     class Meta:
         model = service_function_chain
-        fields = ('id', 'name','symmetric','service_functions')
+        fields = ('id', 'symmetric','service_functions')
         
 class service_function_locator_Serializer(serializers.ModelSerializer):
     class Meta:

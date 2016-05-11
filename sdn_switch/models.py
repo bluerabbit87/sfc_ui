@@ -1,6 +1,29 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from vim.models import Hypervisor
+
+class OpenvSwitch(models.Model):
+    owner_hypervisor = models.ForeignKey(Hypervisor)
+    root_password    = models.CharField(max_length=50,default="unknown")
+    root_id          = models.CharField(max_length=50,default="unknown")
+    status           = models.CharField(max_length=50,default="unknown")
+    _uuid            = models.CharField(max_length=50,default="unknown")
+    bridges          = models.CharField(max_length=50,default="unknown")
+    cur_cfg          = models.CharField(max_length=50,default="unknown")
+    db_version       = models.CharField(max_length=50,default="unknown")
+    external_ids     = models.CharField(max_length=50,default="unknown")
+    manager_options  = models.CharField(max_length=50,default="unknown")
+    next_cfg         = models.CharField(max_length=50,default="unknown")
+    other_config     = models.CharField(max_length=50,default="unknown")
+    ovs_version      = models.CharField(max_length=50,default="unknown")
+    ssl              = models.CharField(max_length=50,default="unknown")
+    statistics       = models.CharField(max_length=50,default="unknown")
+    system_type      = models.CharField(max_length=50,default="unknown")
+    system_version   = models.CharField(max_length=50,default="unknown")
+
+
+
 
 # Create your models here.
 # class Bridge(models.Model):

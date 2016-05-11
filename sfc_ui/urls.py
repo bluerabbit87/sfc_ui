@@ -13,15 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-import UserList
-from django.conf.urls import url, include, patterns
-from django.contrib import admin
+
+from django.conf.urls import url, include
 from rest_framework import routers
-from rest_framework.urlpatterns import format_suffix_patterns
 
 from sfc import views
-from vim.models import vim
-from vim.serializers import vim_Serializer
 import vim.views as openstack_views
 
 
@@ -35,14 +31,16 @@ router.register(r'data_plane_locator',views.data_plane_locator_ViewSet)
 router.register(r'service_function_locator',views.service_function_locator_ViewSet)
 router.register(r'rendered_service_path',views.rendered_service_path_ViewSet)
 router.register(r'rendered_service_path_hop_locator',views.rendered_service_path_hop_locator_ViewSet)
-router.register(r'vim', openstack_views.vim_ViewSet)
-router.register(r'port', openstack_views.port_ViewSet)
-
+router.register(r'vim', openstack_views.VIMViewSet)
+router.register(r'port', openstack_views.PortViewSet)
+router.register(r'hypervisor', openstack_views.HypervisorViewSet)
+router.register(r'network', openstack_views.NetworkViewSet)
+router.register(r'server', openstack_views.ServerViewSet)
+router.register(r'interface', openstack_views.InterfaceViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    #url(r'^vims/$', openstack_views.vim_List.as_view()),
-#     url(r'^vims/(?P<pk>[0-9]+)/$', openstack_views.vim_Detail.as_view()),
+
 ]
 #urlpatterns = format_suffix_patterns(urlpatterns)
