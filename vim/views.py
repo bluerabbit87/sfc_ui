@@ -12,6 +12,7 @@ from vim.serializers import VIMSerializer, PortSerializer, \
 from vim.utils import  print_values
 import keystoneclient.apiclient.exceptions
 import keystoneclient.v2_0.client as ksclient
+
 class VIMViewSet(mixins.ListModelMixin,
                mixins.UpdateModelMixin,
                mixins.DestroyModelMixin,
@@ -352,10 +353,10 @@ class VIMViewSet(mixins.ListModelMixin,
         vim_environment = get_object_or_404(self.queryset, pk=pk)
         
         self.check_status(vim_environment)
-        #self.update_ports(vim_environment)
-        #self.update_hypervisors(vim_environment)
+        self.update_ports(vim_environment)
+        self.update_hypervisors(vim_environment)
         self.update_networks(vim_environment)
-        #self.update_instances(vim_environment)
+        self.update_instances(vim_environment)
         serializer = self.serializer_class(vim_environment)
         return Response(serializer.data)
 
