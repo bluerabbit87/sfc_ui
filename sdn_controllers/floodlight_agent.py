@@ -1,17 +1,21 @@
 # encoding: utf-8
+'''
+Created on May 2, 2016
+
+@author: root
+'''
+# -*- coding: utf-8 -*-
+'''
+Created on Sep 23, 2015
+
+@author: bluerabbit87
+'''
+
 import cStringIO
-from django.shortcuts import render
 import json
 import logging
-import pprint
 import pycurl
-from rest_framework import mixins, viewsets
-from rest_framework.generics import get_object_or_404
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-
-from sdn_controllers.models import SDNController
-from sdn_controllers.serializers import SDNControllerSerializer
+from urllib import urlencode
 
 
 class OpenFlowHandler(object):
@@ -42,9 +46,8 @@ Respond:
     url_device = '/wm/device'
     url_route = '/wm/topology/route'
     url_static_flow_pusher = '/wm/staticflowpusher/json'
-    url_health = '/wm/core/health/json'
 
-    def __init__(self, controller_ip, controller_port,logger = None): 
+    def __init__(self, controller_ip, controller_port, logger=None): 
         '''
         Constructor
         A __init__ function receives connection information of SDN controller such as IP and Port addresses.
@@ -53,7 +56,6 @@ Respond:
         
         self.__controller_ip = controller_ip;
         self.__controller_port = controller_port;
-        
         if logger == None:
             self.logger = logging.getLogger('logger');
             fomatter = logging.Formatter('[%(levelname)s|%(filename)s:%(lineno)s] %(asctime)s > %(message)s')
@@ -71,7 +73,6 @@ Respond:
         else:
             self.logger = logger;
         # At this time, FloodlightPlugin communicates with Floodlight via a pycurl library
-        
         
     def get_controller_ip(self):
         # Return the IP address of sdn controller  
@@ -145,7 +146,7 @@ Respond:
             local_pycurl.perform()
             local_pycurl.close()
         except pycurl.error:
-            #self.logger.critical("couldn't connect to host");
+            self.logger.critical("couldn't connect to host");
             return None
             
         
@@ -155,7 +156,7 @@ Respond:
         if raw_json_response != "":
             json_response = json.loads(raw_json_response);
             self.logger.debug(json.dumps(json_response, sort_keys=True,
-                            indent=4, separators=(',', ': ')));
+                             indent=4, separators=(',', ': ')));
             return json_response
         
         else:
@@ -182,140 +183,9 @@ Respond:
     def get_device(self):
         self.logger.info("get_device");
         return self.__get(self.url_device)
-
-    def get_health(self):
-        self.logger.info("get_health");
-        return self.__get(self.url_health)
-
-    def get_load_modules(self):
-        self.logger.info("get_module");
-        return self.__get("/wm/core/module/loaded/json")
-
-    def get_memory(self):
-        self.logger.info("get_memory");
-        return self.__get("/wm/core/memory/json")
     
-    def get_sys_uptime(self):
-        self.logger.info("get_uptime");
-        return self.__get("/wm/core/system/uptime/json")
-
-    def get_tables(self):
-        self.logger.info("get_tables");
-        return self.__get("/wm/core/storage/tables/json")
- 
     def get(self, url):
         return self.__get(url)
     
     def port(self, url, post_data):
         return self.__post(url, post_data)
-
-# Create your views here.
-class SDNControllerViewSet(mixins.ListModelMixin,
-               mixins.UpdateModelMixin,
-               mixins.DestroyModelMixin,
-               mixins.CreateModelMixin,
-               viewsets.GenericViewSet):
-    queryset = SDNController.objects.all()
-    serializer_class = SDNControllerSerializer
-    
-    def check_status(self, host_info):
-        try:
-            openflow = OpenFlowHandler(host_info.mgmt_ip,host_info.mgmt_port)
-            host_info.health = openflow.get_health()
-            host_info.memory = openflow.get_memory()
-            host_info.uptime = openflow.get_sys_uptime()
-            host_info.tables = openflow.get_tables()
-            host_info.status = "Good"
-            host_info.save()
-        except Exception:
-            host_info.status = "Not, Good"
-            host_info.save()
-    
-    
-    def UpdateFloodlightSwitche(self, host_info):
-        openflow = OpenFlowHandler(host_info.mgmt_ip,host_info.mgmt_port)
-#         result = openflow.get_switch_desc()
-#         print result
-#         result = openflow.get_switch_flow()
-#         print result
-        result = openflow.get_switch_port()
-        print result
-
-        #pprint.pprint (result)
-        
-#         
-#          
-#                                                 _uuid = row["_uuid"],
-#                                                 controller = row["controller"],
-#                                                 datapath_id = row["datapath_id"],
-#                                                 datapath_type = row["datapath_type"],
-#                                                 external_ids = row["external_ids"],
-#                                                 fail_mode = row["fail_mode"],
-#                                                 flood_vlans = row["flood_vlans"],
-#                                                 flow_tables = row["flow_tables"],
-#                                                 ipfix = row["ipfix"],
-#                                                 mirrors = row["mirrors"],
-#                                                 name = row["name"],
-#                                                 netflow = row["netflow"],
-#                                                 other_config = row["other_config"],
-#                                                 ports = row["ports"],
-#                                                 protocols = row["protocols"],
-#                                                 sflow = row["sflow"],
-#                                                 status = row["status"],
-#                                                 stp_enable = row["stp_enable"],
-#                                               )
-#                     new_ovsbridge = OVSBridge(
-#                     new_ovsbridge = OVSBridge.objects.get(pk = row["_uuid"])
-#                     new_ovsbridge.controller = row["controller"]
-#                     new_ovsbridge.datapath_id = row["datapath_id"]
-#                     new_ovsbridge.datapath_type = row["datapath_type"]
-#                     new_ovsbridge.external_ids = row["external_ids"]
-#                     new_ovsbridge.fail_mode = row["fail_mode"]
-#                     new_ovsbridge.flood_vlans = row["flood_vlans"]
-#                     new_ovsbridge.flow_tables = row["flow_tables"]
-#                     new_ovsbridge.ipfix = row["ipfix"]
-#                     new_ovsbridge.mirrors = row["mirrors"]
-#                     new_ovsbridge.name = row["name"]
-#                     new_ovsbridge.netflow = row["netflow"]
-#                     new_ovsbridge.other_config = row["other_config"]
-#                     new_ovsbridge.ports = row["ports"]
-#                     new_ovsbridge.protocols = row["protocols"]
-#                     new_ovsbridge.save()
-#                     new_ovsbridge.save()
-#                     new_ovsbridge.sflow = row["sflow"]
-#                     new_ovsbridge.status = row["status"]
-#                     new_ovsbridge.stp_enable = row["stp_enable"]
-#                     print "Update OVS Bridge"
-#                     print "add OVS Bridge" 
-#                 except ObjectDoesNotExist as Detail:
-#                 print row
-#                 try:
-#             for row in result["rows"]:
-#             print type(Detail)
-#             results = self.ovsdbManager.transact(["Open_vSwitch",{"op":"select","table":"Bridge","where":[]}])
-#             return
-#         except Exception as Detail:
-#         for result in results["result"]:
-#         results = []
-#         try:
-#     def UpdateOVSBridge(self, host_info):
-    
-    
-    def perform_create(self, serializer):
-        serializer.save()
-
-    def get_success_headers(self, data):
-        try:
-            return {'Location': data[api_settings.URL_FIELD_NAME]}
-        except (TypeError, KeyError):
-            return {}
-    
-
-    def retrieve(self, request, pk=None):
-        print "cont Controller retrieve"
-        cont_info = get_object_or_404(self.queryset, pk=pk)
-        self.check_status(cont_info)
-        self.UpdateFloodlightSwitche(cont_info)
-        #self.update_instances(vim_environment)
-        serializer = self.serializer_class(cont_info)
-        return Response(serializer.data)    

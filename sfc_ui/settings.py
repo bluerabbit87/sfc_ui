@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'sdn_controllers',
+    'sdn_switch',
     'vim',
     'sfc',
     'rest_framework',

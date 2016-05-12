@@ -17,6 +17,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from rest_framework import routers
 
+import sdn_controllers.views as sdn_controller_views
+import sdn_switch.views as sdn_switch_views
 from sfc import views
 import vim.views as openstack_views
 
@@ -37,6 +39,12 @@ router.register(r'hypervisor', openstack_views.HypervisorViewSet)
 router.register(r'network', openstack_views.NetworkViewSet)
 router.register(r'server', openstack_views.ServerViewSet)
 router.register(r'interface', openstack_views.InterfaceViewSet)
+router.register(r'host', sdn_switch_views.HostViewSet)
+router.register(r'openvswitch', sdn_switch_views.OpenvSwitchViewSet)
+router.register(r'ovs_port', sdn_switch_views.OVSPortViewSet)
+router.register(r'ovs_interface', sdn_switch_views.OVSInterfaceViewSet)
+router.register(r'ovs_bridge', sdn_switch_views.OVSBridgeViewSet)
+router.register(r'sdn_controller', sdn_controller_views.SDNControllerViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

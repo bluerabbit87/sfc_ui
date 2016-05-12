@@ -1,0 +1,2632 @@
+[INFO|views.py:165] 2016-05-12 06:56:35,975 > get_switch_desc
+[INFO|views.py:135] 2016-05-12 06:56:35,976 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:139] 2016-05-12 06:56:35,977 > request_curl_url: http://127.0.0.0:8080/wm/core/switch/all/desc/json
+[INFO|views.py:169] 2016-05-12 06:57:03,858 > get_switch_port
+[INFO|views.py:135] 2016-05-12 06:57:03,858 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:139] 2016-05-12 06:57:03,860 > request_curl_url: http://127.0.0.0:8080/wm/core/switch/all/port/json
+[INFO|views.py:169] 2016-05-12 06:57:07,259 > get_switch_port
+[INFO|views.py:169] 2016-05-12 06:57:07,259 > get_switch_port
+[INFO|views.py:135] 2016-05-12 06:57:07,259 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:135] 2016-05-12 06:57:07,259 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:139] 2016-05-12 06:57:07,259 > request_curl_url: http://127.0.0.0:8080/wm/core/switch/all/port/json
+[DEBUG|views.py:139] 2016-05-12 06:57:07,259 > request_curl_url: http://127.0.0.0:8080/wm/core/switch/all/port/json
+[INFO|views.py:169] 2016-05-12 06:57:32,250 > get_switch_port
+[INFO|views.py:169] 2016-05-12 06:57:32,250 > get_switch_port
+[INFO|views.py:169] 2016-05-12 06:57:32,250 > get_switch_port
+[INFO|views.py:135] 2016-05-12 06:57:32,251 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:135] 2016-05-12 06:57:32,251 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:135] 2016-05-12 06:57:32,251 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:139] 2016-05-12 06:57:32,251 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/port/json
+[DEBUG|views.py:139] 2016-05-12 06:57:32,251 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/port/json
+[DEBUG|views.py:139] 2016-05-12 06:57:32,251 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/port/json
+[DEBUG|views.py:156] 2016-05-12 06:57:33,314 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "232000000",
+                        "durationSec": "24666",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "12626",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "230000000",
+                        "durationSec": "24666",
+                        "portNumber": "4",
+                        "receiveBytes": "1496753",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "12498",
+                        "transmitBytes": "27955",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "295"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "232000000",
+                        "durationSec": "24648",
+                        "portNumber": "2",
+                        "receiveBytes": "21774",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "254",
+                        "transmitBytes": "1506307",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12621"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "674000000",
+                        "durationSec": "24568",
+                        "portNumber": "13",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1496866",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12534"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "523000000",
+                        "durationSec": "24569",
+                        "portNumber": "11",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "3802",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "39"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "529000000",
+                        "durationSec": "24569",
+                        "portNumber": "10",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "1794",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "21"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "805000000",
+                        "durationSec": "24575",
+                        "portNumber": "8",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "78",
+                        "transmitDropped": "3",
+                        "transmitErrors": "0",
+                        "transmitPackets": "1"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "181000000",
+                        "durationSec": "24666",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "12639",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "800000000",
+                        "durationSec": "24575",
+                        "portNumber": "9",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "3486",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "35"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "325000000",
+                        "durationSec": "24648",
+                        "portNumber": "5",
+                        "receiveBytes": "1506307",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "12621",
+                        "transmitBytes": "21774",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "254"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "750000000",
+                        "durationSec": "24568",
+                        "portNumber": "12",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "4958",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "51"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "634000000",
+                        "durationSec": "24567",
+                        "portNumber": "14",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1496536",
+                        "transmitDropped": "5",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12531"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "834000000",
+                        "durationSec": "24575",
+                        "portNumber": "7",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "718",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "9"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "904000000",
+                        "durationSec": "24647",
+                        "portNumber": "6",
+                        "receiveBytes": "5136",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "48",
+                        "transmitBytes": "1511442",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12715"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "924000000",
+                        "durationSec": "24648",
+                        "portNumber": "4",
+                        "receiveBytes": "1498",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14",
+                        "transmitBytes": "1516578",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12763"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    }
+}
+[DEBUG|views.py:156] 2016-05-12 06:57:33,314 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "232000000",
+                        "durationSec": "24666",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "12626",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "230000000",
+                        "durationSec": "24666",
+                        "portNumber": "4",
+                        "receiveBytes": "1496753",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "12498",
+                        "transmitBytes": "27955",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "295"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "232000000",
+                        "durationSec": "24648",
+                        "portNumber": "2",
+                        "receiveBytes": "21774",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "254",
+                        "transmitBytes": "1506307",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12621"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "674000000",
+                        "durationSec": "24568",
+                        "portNumber": "13",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1496866",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12534"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "523000000",
+                        "durationSec": "24569",
+                        "portNumber": "11",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "3802",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "39"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "529000000",
+                        "durationSec": "24569",
+                        "portNumber": "10",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "1794",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "21"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "805000000",
+                        "durationSec": "24575",
+                        "portNumber": "8",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "78",
+                        "transmitDropped": "3",
+                        "transmitErrors": "0",
+                        "transmitPackets": "1"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "181000000",
+                        "durationSec": "24666",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "12639",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "800000000",
+                        "durationSec": "24575",
+                        "portNumber": "9",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "3486",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "35"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "325000000",
+                        "durationSec": "24648",
+                        "portNumber": "5",
+                        "receiveBytes": "1506307",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "12621",
+                        "transmitBytes": "21774",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "254"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "750000000",
+                        "durationSec": "24568",
+                        "portNumber": "12",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "4958",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "51"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "634000000",
+                        "durationSec": "24567",
+                        "portNumber": "14",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1496536",
+                        "transmitDropped": "5",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12531"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "834000000",
+                        "durationSec": "24575",
+                        "portNumber": "7",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "718",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "9"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "904000000",
+                        "durationSec": "24647",
+                        "portNumber": "6",
+                        "receiveBytes": "5136",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "48",
+                        "transmitBytes": "1511442",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12715"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "924000000",
+                        "durationSec": "24648",
+                        "portNumber": "4",
+                        "receiveBytes": "1498",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14",
+                        "transmitBytes": "1516578",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12763"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    }
+}
+[DEBUG|views.py:156] 2016-05-12 06:57:33,314 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "232000000",
+                        "durationSec": "24666",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "12626",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "230000000",
+                        "durationSec": "24666",
+                        "portNumber": "4",
+                        "receiveBytes": "1496753",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "12498",
+                        "transmitBytes": "27955",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "295"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "232000000",
+                        "durationSec": "24648",
+                        "portNumber": "2",
+                        "receiveBytes": "21774",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "254",
+                        "transmitBytes": "1506307",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12621"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "674000000",
+                        "durationSec": "24568",
+                        "portNumber": "13",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1496866",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12534"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "523000000",
+                        "durationSec": "24569",
+                        "portNumber": "11",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "3802",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "39"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "529000000",
+                        "durationSec": "24569",
+                        "portNumber": "10",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "1794",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "21"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "805000000",
+                        "durationSec": "24575",
+                        "portNumber": "8",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "78",
+                        "transmitDropped": "3",
+                        "transmitErrors": "0",
+                        "transmitPackets": "1"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "181000000",
+                        "durationSec": "24666",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "12639",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "800000000",
+                        "durationSec": "24575",
+                        "portNumber": "9",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "3486",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "35"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "325000000",
+                        "durationSec": "24648",
+                        "portNumber": "5",
+                        "receiveBytes": "1506307",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "12621",
+                        "transmitBytes": "21774",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "254"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "750000000",
+                        "durationSec": "24568",
+                        "portNumber": "12",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "4958",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "51"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "634000000",
+                        "durationSec": "24567",
+                        "portNumber": "14",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1496536",
+                        "transmitDropped": "5",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12531"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "834000000",
+                        "durationSec": "24575",
+                        "portNumber": "7",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "718",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "9"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "904000000",
+                        "durationSec": "24647",
+                        "portNumber": "6",
+                        "receiveBytes": "5136",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "48",
+                        "transmitBytes": "1511442",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12715"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "924000000",
+                        "durationSec": "24648",
+                        "portNumber": "4",
+                        "receiveBytes": "1498",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14",
+                        "transmitBytes": "1516578",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "12763"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    }
+}
+[INFO|views.py:186] 2016-05-12 07:01:13,106 > get_health
+[INFO|views.py:136] 2016-05-12 07:01:13,107 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:01:13,108 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:157] 2016-05-12 07:01:13,134 > {
+    "healthy": true
+}
+[INFO|views.py:186] 2016-05-12 07:31:17,928 > get_health
+[INFO|views.py:136] 2016-05-12 07:31:17,928 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:31:17,934 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:157] 2016-05-12 07:31:17,950 > {
+    "healthy": true
+}
+[INFO|views.py:190] 2016-05-12 07:31:17,951 > get_module
+[INFO|views.py:136] 2016-05-12 07:31:17,952 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:31:17,954 > request_curl_url: http://127.0.0.1:8080/wm/core/module/loaded/json
+[DEBUG|views.py:157] 2016-05-12 07:31:18,007 > {
+    "net.floodlightcontroller.accesscontrollist.ACL": {
+        "depends": {
+            "net.floodlightcontroller.devicemanager.IDeviceService": "net.floodlightcontroller.devicemanager.internal.DeviceManagerImpl",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.accesscontrollist.IACLService": "net.floodlightcontroller.accesscontrollist.ACL"
+        }
+    },
+    "net.floodlightcontroller.core.internal.FloodlightProvider": {
+        "depends": {
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager",
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.debugevent.IDebugEventService": "net.floodlightcontroller.debugevent.DebugEventService",
+            "net.floodlightcontroller.perfmon.IPktInProcessingTimeService": "net.floodlightcontroller.perfmon.PktInProcessingTime",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource",
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool",
+            "org.sdnplatform.sync.ISyncService": "org.sdnplatform.sync.internal.SyncManager"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller"
+        }
+    },
+    "net.floodlightcontroller.core.internal.OFSwitchManager": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.debugevent.IDebugEventService": "net.floodlightcontroller.debugevent.DebugEventService",
+            "org.sdnplatform.sync.ISyncService": "org.sdnplatform.sync.internal.SyncManager"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager"
+        }
+    },
+    "net.floodlightcontroller.core.internal.ShutdownServiceImpl": {
+        "depends": {},
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.core.IShutdownService": "net.floodlightcontroller.core.internal.ShutdownServiceImpl"
+        }
+    },
+    "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl": {
+        "depends": {
+            "net.floodlightcontroller.core.IShutdownService": "net.floodlightcontroller.core.internal.ShutdownServiceImpl"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl"
+        }
+    },
+    "net.floodlightcontroller.debugevent.DebugEventService": {
+        "depends": {
+            "net.floodlightcontroller.core.IShutdownService": "net.floodlightcontroller.core.internal.ShutdownServiceImpl"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.debugevent.IDebugEventService": "net.floodlightcontroller.debugevent.DebugEventService"
+        }
+    },
+    "net.floodlightcontroller.devicemanager.internal.DefaultEntityClassifier": {
+        "depends": {},
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.devicemanager.IEntityClassifierService": "net.floodlightcontroller.devicemanager.internal.DefaultEntityClassifier"
+        }
+    },
+    "net.floodlightcontroller.devicemanager.internal.DeviceManagerImpl": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.devicemanager.IEntityClassifierService": "net.floodlightcontroller.devicemanager.internal.DefaultEntityClassifier",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource",
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool",
+            "net.floodlightcontroller.topology.ITopologyService": "net.floodlightcontroller.topology.TopologyManager",
+            "org.sdnplatform.sync.ISyncService": "org.sdnplatform.sync.internal.SyncManager"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.devicemanager.IDeviceService": "net.floodlightcontroller.devicemanager.internal.DeviceManagerImpl"
+        }
+    },
+    "net.floodlightcontroller.dhcpserver.DHCPServer": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller"
+        },
+        "loaded": false,
+        "provides": {}
+    },
+    "net.floodlightcontroller.firewall.Firewall": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.firewall.IFirewallService": "net.floodlightcontroller.firewall.Firewall"
+        }
+    },
+    "net.floodlightcontroller.flowcache.FlowReconcileManager": {
+        "depends": {},
+        "loaded": false,
+        "provides": {
+            "net.floodlightcontroller.flowcache.IFlowReconcileService": "net.floodlightcontroller.flowcache.FlowReconcileManager"
+        }
+    },
+    "net.floodlightcontroller.forwarding.Forwarding": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.devicemanager.IDeviceService": "net.floodlightcontroller.devicemanager.internal.DeviceManagerImpl",
+            "net.floodlightcontroller.routing.IRoutingService": "net.floodlightcontroller.topology.TopologyManager",
+            "net.floodlightcontroller.topology.ITopologyService": "net.floodlightcontroller.topology.TopologyManager"
+        },
+        "loaded": false,
+        "provides": {}
+    },
+    "net.floodlightcontroller.hub.Hub": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller"
+        },
+        "loaded": false,
+        "provides": {}
+    },
+    "net.floodlightcontroller.jython.JythonDebugInterface": {
+        "depends": {},
+        "loaded": false,
+        "provides": {}
+    },
+    "net.floodlightcontroller.learningswitch.LearningSwitch": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        },
+        "loaded": false,
+        "provides": {
+            "net.floodlightcontroller.learningswitch.ILearningSwitchService": "net.floodlightcontroller.learningswitch.LearningSwitch"
+        }
+    },
+    "net.floodlightcontroller.linkdiscovery.internal.LinkDiscoveryManager": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.core.IShutdownService": "net.floodlightcontroller.core.internal.ShutdownServiceImpl",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource",
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.linkdiscovery.ILinkDiscoveryService": "net.floodlightcontroller.linkdiscovery.internal.LinkDiscoveryManager"
+        }
+    },
+    "net.floodlightcontroller.loadbalancer.LoadBalancer": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager",
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.devicemanager.IDeviceService": "net.floodlightcontroller.devicemanager.internal.DeviceManagerImpl",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.routing.IRoutingService": "net.floodlightcontroller.topology.TopologyManager",
+            "net.floodlightcontroller.staticflowentry.IStaticFlowEntryPusherService": "net.floodlightcontroller.staticflowentry.StaticFlowEntryPusher",
+            "net.floodlightcontroller.topology.ITopologyService": "net.floodlightcontroller.topology.TopologyManager"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.loadbalancer.ILoadBalancerService": "net.floodlightcontroller.loadbalancer.LoadBalancer"
+        }
+    },
+    "net.floodlightcontroller.perfmon.PktInProcessingTime": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.perfmon.IPktInProcessingTimeService": "net.floodlightcontroller.perfmon.PktInProcessingTime"
+        }
+    },
+    "net.floodlightcontroller.restserver.RestApiServer": {
+        "depends": {},
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        }
+    },
+    "net.floodlightcontroller.staticflowentry.StaticFlowEntryPusher": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.staticflowentry.IStaticFlowEntryPusherService": "net.floodlightcontroller.staticflowentry.StaticFlowEntryPusher"
+        }
+    },
+    "net.floodlightcontroller.statistics.StatisticsCollector": {
+        "depends": {
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.statistics.IStatisticsService": "net.floodlightcontroller.statistics.StatisticsCollector"
+        }
+    },
+    "net.floodlightcontroller.storage.memory.MemoryStorageSource": {
+        "depends": {
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource"
+        }
+    },
+    "net.floodlightcontroller.testmodule.TestModule": {
+        "depends": {
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager",
+            "net.floodlightcontroller.staticflowentry.IStaticFlowEntryPusherService": "net.floodlightcontroller.staticflowentry.StaticFlowEntryPusher"
+        },
+        "loaded": false,
+        "provides": {}
+    },
+    "net.floodlightcontroller.threadpool.ThreadPool": {
+        "depends": {},
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool"
+        }
+    },
+    "net.floodlightcontroller.topology.TopologyManager": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.core.internal.IOFSwitchService": "net.floodlightcontroller.core.internal.OFSwitchManager",
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.debugevent.IDebugEventService": "net.floodlightcontroller.debugevent.DebugEventService",
+            "net.floodlightcontroller.linkdiscovery.ILinkDiscoveryService": "net.floodlightcontroller.linkdiscovery.internal.LinkDiscoveryManager",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer",
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool"
+        },
+        "loaded": true,
+        "provides": {
+            "net.floodlightcontroller.routing.IRoutingService": "net.floodlightcontroller.topology.TopologyManager",
+            "net.floodlightcontroller.topology.ITopologyService": "net.floodlightcontroller.topology.TopologyManager"
+        }
+    },
+    "net.floodlightcontroller.ui.web.StaticWebRoutable": {
+        "depends": {
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        },
+        "loaded": false,
+        "provides": {}
+    },
+    "net.floodlightcontroller.virtualnetwork.VirtualNetworkFilter": {
+        "depends": {
+            "net.floodlightcontroller.core.IFloodlightProviderService": "net.floodlightcontroller.core.internal.Controller",
+            "net.floodlightcontroller.devicemanager.IDeviceService": "net.floodlightcontroller.devicemanager.internal.DeviceManagerImpl",
+            "net.floodlightcontroller.restserver.IRestApiService": "net.floodlightcontroller.restserver.RestApiServer"
+        },
+        "loaded": false,
+        "provides": {
+            "net.floodlightcontroller.virtualnetwork.IVirtualNetworkService": "net.floodlightcontroller.virtualnetwork.VirtualNetworkFilter"
+        }
+    },
+    "org.sdnplatform.sync.internal.SyncManager": {
+        "depends": {
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "net.floodlightcontroller.storage.IStorageSourceService": "net.floodlightcontroller.storage.memory.MemoryStorageSource",
+            "net.floodlightcontroller.threadpool.IThreadPoolService": "net.floodlightcontroller.threadpool.ThreadPool"
+        },
+        "loaded": true,
+        "provides": {
+            "org.sdnplatform.sync.ISyncService": "org.sdnplatform.sync.internal.SyncManager"
+        }
+    },
+    "org.sdnplatform.sync.internal.SyncTorture": {
+        "depends": {
+            "net.floodlightcontroller.debugcounter.IDebugCounterService": "net.floodlightcontroller.debugcounter.DebugCounterServiceImpl",
+            "org.sdnplatform.sync.ISyncService": "org.sdnplatform.sync.internal.SyncManager"
+        },
+        "loaded": false,
+        "provides": {}
+    }
+}
+[INFO|views.py:194] 2016-05-12 07:31:18,009 > get_memory
+[INFO|views.py:136] 2016-05-12 07:31:18,010 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:31:18,012 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:157] 2016-05-12 07:31:18,030 > {
+    "free": 1659310072,
+    "total": 2042626048
+}
+[INFO|views.py:198] 2016-05-12 07:31:18,031 > get_uptime
+[INFO|views.py:136] 2016-05-12 07:31:18,031 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:31:18,031 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:157] 2016-05-12 07:31:18,054 > {
+    "systemUptimeMsec": 2960129
+}
+[INFO|views.py:202] 2016-05-12 07:31:18,054 > get_tables
+[INFO|views.py:136] 2016-05-12 07:31:18,054 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:31:18,054 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:157] 2016-05-12 07:31:18,062 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:186] 2016-05-12 07:46:17,943 > get_health
+[INFO|views.py:136] 2016-05-12 07:46:17,944 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:17,945 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:157] 2016-05-12 07:46:17,950 > {
+    "healthy": true
+}
+[INFO|views.py:194] 2016-05-12 07:46:17,950 > get_memory
+[INFO|views.py:136] 2016-05-12 07:46:17,950 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:17,950 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:157] 2016-05-12 07:46:17,960 > {
+    "free": 1620804176,
+    "total": 2042626048
+}
+[INFO|views.py:198] 2016-05-12 07:46:17,960 > get_uptime
+[INFO|views.py:136] 2016-05-12 07:46:17,961 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:17,965 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:157] 2016-05-12 07:46:17,973 > {
+    "systemUptimeMsec": 3860059
+}
+[INFO|views.py:202] 2016-05-12 07:46:17,973 > get_tables
+[INFO|views.py:136] 2016-05-12 07:46:17,975 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:17,976 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:157] 2016-05-12 07:46:18,004 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:186] 2016-05-12 07:46:33,503 > get_health
+[INFO|views.py:136] 2016-05-12 07:46:33,504 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:33,506 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:157] 2016-05-12 07:46:33,511 > {
+    "healthy": true
+}
+[INFO|views.py:194] 2016-05-12 07:46:33,511 > get_memory
+[INFO|views.py:136] 2016-05-12 07:46:33,511 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:33,511 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:157] 2016-05-12 07:46:33,517 > {
+    "free": 1619545800,
+    "total": 2042626048
+}
+[INFO|views.py:198] 2016-05-12 07:46:33,517 > get_uptime
+[INFO|views.py:136] 2016-05-12 07:46:33,517 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:33,517 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:157] 2016-05-12 07:46:33,532 > {
+    "systemUptimeMsec": 3875619
+}
+[INFO|views.py:202] 2016-05-12 07:46:33,532 > get_tables
+[INFO|views.py:136] 2016-05-12 07:46:33,532 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:140] 2016-05-12 07:46:33,533 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:157] 2016-05-12 07:46:33,551 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:187] 2016-05-12 07:50:41,761 > get_health
+[INFO|views.py:137] 2016-05-12 07:50:41,761 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:50:41,762 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:158] 2016-05-12 07:50:41,767 > {
+    "healthy": true
+}
+[INFO|views.py:195] 2016-05-12 07:50:41,767 > get_memory
+[INFO|views.py:137] 2016-05-12 07:50:41,767 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:50:41,767 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:158] 2016-05-12 07:50:41,784 > {
+    "free": 1593875288,
+    "total": 2042626048
+}
+[INFO|views.py:199] 2016-05-12 07:50:41,785 > get_uptime
+[INFO|views.py:137] 2016-05-12 07:50:41,785 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:50:41,786 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:158] 2016-05-12 07:50:41,794 > {
+    "systemUptimeMsec": 4123880
+}
+[INFO|views.py:203] 2016-05-12 07:50:41,794 > get_tables
+[INFO|views.py:137] 2016-05-12 07:50:41,794 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:50:41,794 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:158] 2016-05-12 07:50:41,809 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:167] 2016-05-12 07:50:41,825 > get_switch_desc
+[INFO|views.py:167] 2016-05-12 07:50:41,825 > get_switch_desc
+[INFO|views.py:137] 2016-05-12 07:50:41,826 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:137] 2016-05-12 07:50:41,826 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:50:41,826 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/desc/json
+[DEBUG|views.py:141] 2016-05-12 07:50:41,826 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/desc/json
+[DEBUG|views.py:158] 2016-05-12 07:50:42,836 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    }
+}
+[DEBUG|views.py:158] 2016-05-12 07:50:42,836 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    }
+}
+[INFO|views.py:187] 2016-05-12 07:52:01,714 > get_health
+[INFO|views.py:137] 2016-05-12 07:52:01,714 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:52:01,716 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:158] 2016-05-12 07:52:01,724 > {
+    "healthy": true
+}
+[INFO|views.py:195] 2016-05-12 07:52:01,724 > get_memory
+[INFO|views.py:137] 2016-05-12 07:52:01,724 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:52:01,724 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:158] 2016-05-12 07:52:01,732 > {
+    "free": 1591358168,
+    "total": 2042626048
+}
+[INFO|views.py:199] 2016-05-12 07:52:01,733 > get_uptime
+[INFO|views.py:137] 2016-05-12 07:52:01,733 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:52:01,733 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:158] 2016-05-12 07:52:01,746 > {
+    "systemUptimeMsec": 4203831
+}
+[INFO|views.py:203] 2016-05-12 07:52:01,747 > get_tables
+[INFO|views.py:137] 2016-05-12 07:52:01,749 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:52:01,749 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:158] 2016-05-12 07:52:01,766 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:167] 2016-05-12 07:52:01,793 > get_switch_desc
+[INFO|views.py:167] 2016-05-12 07:52:01,793 > get_switch_desc
+[INFO|views.py:137] 2016-05-12 07:52:01,793 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:137] 2016-05-12 07:52:01,793 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:52:01,794 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/desc/json
+[DEBUG|views.py:141] 2016-05-12 07:52:01,794 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/desc/json
+[DEBUG|views.py:158] 2016-05-12 07:52:02,809 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    }
+}
+[DEBUG|views.py:158] 2016-05-12 07:52:02,809 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "desc": {
+            "datapathDescription": "None",
+            "hardwareDescription": "Open vSwitch",
+            "manufacturerDescription": "Nicira, Inc.",
+            "serialNumber": "None",
+            "softwareDescription": "2.3.2",
+            "version": "OF_13"
+        }
+    }
+}
+[INFO|views.py:187] 2016-05-12 07:54:21,260 > get_health
+[INFO|views.py:137] 2016-05-12 07:54:21,260 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:54:21,261 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:158] 2016-05-12 07:54:21,265 > {
+    "healthy": true
+}
+[INFO|views.py:195] 2016-05-12 07:54:21,265 > get_memory
+[INFO|views.py:137] 2016-05-12 07:54:21,265 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:54:21,265 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:158] 2016-05-12 07:54:21,274 > {
+    "free": 1588841048,
+    "total": 2042626048
+}
+[INFO|views.py:199] 2016-05-12 07:54:21,276 > get_uptime
+[INFO|views.py:137] 2016-05-12 07:54:21,277 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:54:21,277 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:158] 2016-05-12 07:54:21,307 > {
+    "systemUptimeMsec": 4343380
+}
+[INFO|views.py:203] 2016-05-12 07:54:21,307 > get_tables
+[INFO|views.py:137] 2016-05-12 07:54:21,307 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:54:21,308 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:158] 2016-05-12 07:54:21,327 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:175] 2016-05-12 07:54:21,349 > get_switch_flow
+[INFO|views.py:175] 2016-05-12 07:54:21,349 > get_switch_flow
+[INFO|views.py:137] 2016-05-12 07:54:21,350 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:137] 2016-05-12 07:54:21,350 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:54:21,350 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/flow/json
+[DEBUG|views.py:141] 2016-05-12 07:54:21,350 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/flow/json
+[DEBUG|views.py:158] 2016-05-12 07:54:22,400 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "flows": [
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "962000000",
+                "durationSeconds": "27975",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "pop_vlan=n/a,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x1004",
+                    "in_port": "2"
+                },
+                "packetCount": "0",
+                "priority": "4",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "173453",
+                "cookie": "0",
+                "durationNSeconds": "862000000",
+                "durationSeconds": "28057",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=normal"
+                    }
+                },
+                "match": {},
+                "packetCount": "1783",
+                "priority": "1",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "431000000",
+                "durationSeconds": "4340",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=controller"
+                    }
+                },
+                "match": {},
+                "packetCount": "0",
+                "priority": "0",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "46090",
+                "cookie": "0",
+                "durationNSeconds": "494000000",
+                "durationSeconds": "28057",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {
+                    "in_port": "2"
+                },
+                "packetCount": "582",
+                "priority": "2",
+                "tableId": "0x0",
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "flows": [
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "691000000",
+                "durationSeconds": "27983",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "eth_vlan_vid=1,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x1009",
+                    "in_port": "4"
+                },
+                "packetCount": "0",
+                "priority": "3",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "72000000",
+                "durationSeconds": "27983",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "eth_vlan_vid=2,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x1025",
+                    "in_port": "4"
+                },
+                "packetCount": "0",
+                "priority": "3",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "12556",
+                "cookie": "0",
+                "durationNSeconds": "678000000",
+                "durationSeconds": "28058",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=normal"
+                    }
+                },
+                "match": {},
+                "packetCount": "134",
+                "priority": "1",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "791000000",
+                "durationSeconds": "4332",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=controller"
+                    }
+                },
+                "match": {},
+                "packetCount": "0",
+                "priority": "0",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "6778",
+                "cookie": "0",
+                "durationNSeconds": "536000000",
+                "durationSeconds": "28057",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {
+                    "in_port": "5"
+                },
+                "packetCount": "49",
+                "priority": "2",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "1605",
+                "cookie": "0",
+                "durationNSeconds": "109000000",
+                "durationSeconds": "28058",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {
+                    "in_port": "4"
+                },
+                "packetCount": "15",
+                "priority": "2",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "1679340",
+                "cookie": "0",
+                "durationNSeconds": "904000000",
+                "durationSeconds": "27975",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "push_vlan=33024,eth_vlan_vid=4,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x0",
+                    "in_port": "5"
+                },
+                "packetCount": "14529",
+                "priority": "3",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "624000000",
+                "durationSeconds": "28058",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {},
+                "packetCount": "0",
+                "priority": "0",
+                "tableId": "0x17",
+                "version": "OF_13"
+            }
+        ]
+    }
+}
+[DEBUG|views.py:158] 2016-05-12 07:54:22,400 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "flows": [
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "962000000",
+                "durationSeconds": "27975",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "pop_vlan=n/a,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x1004",
+                    "in_port": "2"
+                },
+                "packetCount": "0",
+                "priority": "4",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "173453",
+                "cookie": "0",
+                "durationNSeconds": "862000000",
+                "durationSeconds": "28057",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=normal"
+                    }
+                },
+                "match": {},
+                "packetCount": "1783",
+                "priority": "1",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "431000000",
+                "durationSeconds": "4340",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=controller"
+                    }
+                },
+                "match": {},
+                "packetCount": "0",
+                "priority": "0",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "46090",
+                "cookie": "0",
+                "durationNSeconds": "494000000",
+                "durationSeconds": "28057",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {
+                    "in_port": "2"
+                },
+                "packetCount": "582",
+                "priority": "2",
+                "tableId": "0x0",
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "flows": [
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "691000000",
+                "durationSeconds": "27983",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "eth_vlan_vid=1,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x1009",
+                    "in_port": "4"
+                },
+                "packetCount": "0",
+                "priority": "3",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "72000000",
+                "durationSeconds": "27983",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "eth_vlan_vid=2,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x1025",
+                    "in_port": "4"
+                },
+                "packetCount": "0",
+                "priority": "3",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "12556",
+                "cookie": "0",
+                "durationNSeconds": "678000000",
+                "durationSeconds": "28058",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=normal"
+                    }
+                },
+                "match": {},
+                "packetCount": "134",
+                "priority": "1",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "791000000",
+                "durationSeconds": "4332",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "output=controller"
+                    }
+                },
+                "match": {},
+                "packetCount": "0",
+                "priority": "0",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "6778",
+                "cookie": "0",
+                "durationNSeconds": "536000000",
+                "durationSeconds": "28057",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {
+                    "in_port": "5"
+                },
+                "packetCount": "49",
+                "priority": "2",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "1605",
+                "cookie": "0",
+                "durationNSeconds": "109000000",
+                "durationSeconds": "28058",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {
+                    "in_port": "4"
+                },
+                "packetCount": "15",
+                "priority": "2",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "1679340",
+                "cookie": "0",
+                "durationNSeconds": "904000000",
+                "durationSeconds": "27975",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "instruction_apply_actions": {
+                        "actions": "push_vlan=33024,eth_vlan_vid=4,output=normal"
+                    }
+                },
+                "match": {
+                    "eth_vlan_vid": "0x0",
+                    "in_port": "5"
+                },
+                "packetCount": "14529",
+                "priority": "3",
+                "tableId": "0x0",
+                "version": "OF_13"
+            },
+            {
+                "byteCount": "0",
+                "cookie": "0",
+                "durationNSeconds": "624000000",
+                "durationSeconds": "28058",
+                "flags": "0",
+                "hardTimeoutSec": "0",
+                "idleTimeoutSec": "0",
+                "instructions": {
+                    "none": "drop"
+                },
+                "match": {},
+                "packetCount": "0",
+                "priority": "0",
+                "tableId": "0x17",
+                "version": "OF_13"
+            }
+        ]
+    }
+}
+[INFO|views.py:187] 2016-05-12 07:57:56,763 > get_health
+[INFO|views.py:137] 2016-05-12 07:57:56,763 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:57:56,764 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:158] 2016-05-12 07:57:56,769 > {
+    "healthy": true
+}
+[INFO|views.py:195] 2016-05-12 07:57:56,769 > get_memory
+[INFO|views.py:137] 2016-05-12 07:57:56,769 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:57:56,769 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:158] 2016-05-12 07:57:56,776 > {
+    "free": 1578647472,
+    "total": 2042626048
+}
+[INFO|views.py:199] 2016-05-12 07:57:56,777 > get_uptime
+[INFO|views.py:137] 2016-05-12 07:57:56,778 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:57:56,778 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:158] 2016-05-12 07:57:56,785 > {
+    "systemUptimeMsec": 4558870
+}
+[INFO|views.py:203] 2016-05-12 07:57:56,786 > get_tables
+[INFO|views.py:137] 2016-05-12 07:57:56,786 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:57:56,786 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:158] 2016-05-12 07:57:56,790 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:183] 2016-05-12 07:57:56,799 > get_device
+[INFO|views.py:183] 2016-05-12 07:57:56,799 > get_device
+[INFO|views.py:137] 2016-05-12 07:57:56,803 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:137] 2016-05-12 07:57:56,803 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:57:56,806 > request_curl_url: http://127.0.0.1:8080/wm/device
+[DEBUG|views.py:141] 2016-05-12 07:57:56,806 > request_curl_url: http://127.0.0.1:8080/wm/device
+[DEBUG|views.py:158] 2016-05-12 07:57:56,824 > {
+    "clientError": true,
+    "code": 404,
+    "connectorError": false,
+    "description": "The server has not found anything matching the request URI",
+    "error": true,
+    "globalError": false,
+    "informational": false,
+    "reasonPhrase": "Not Found",
+    "recoverableError": false,
+    "redirection": false,
+    "serverError": false,
+    "success": false,
+    "throwable": null,
+    "uri": "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5"
+}
+[DEBUG|views.py:158] 2016-05-12 07:57:56,824 > {
+    "clientError": true,
+    "code": 404,
+    "connectorError": false,
+    "description": "The server has not found anything matching the request URI",
+    "error": true,
+    "globalError": false,
+    "informational": false,
+    "reasonPhrase": "Not Found",
+    "recoverableError": false,
+    "redirection": false,
+    "serverError": false,
+    "success": false,
+    "throwable": null,
+    "uri": "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5"
+}
+[INFO|views.py:187] 2016-05-12 07:58:24,894 > get_health
+[INFO|views.py:137] 2016-05-12 07:58:24,894 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:24,896 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:158] 2016-05-12 07:58:24,901 > {
+    "healthy": true
+}
+[INFO|views.py:195] 2016-05-12 07:58:24,901 > get_memory
+[INFO|views.py:137] 2016-05-12 07:58:24,901 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:24,901 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:158] 2016-05-12 07:58:24,906 > {
+    "free": 1577388912,
+    "total": 2042626048
+}
+[INFO|views.py:199] 2016-05-12 07:58:24,907 > get_uptime
+[INFO|views.py:137] 2016-05-12 07:58:24,907 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:24,907 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:158] 2016-05-12 07:58:24,916 > {
+    "systemUptimeMsec": 4587003
+}
+[INFO|views.py:203] 2016-05-12 07:58:24,916 > get_tables
+[INFO|views.py:137] 2016-05-12 07:58:24,916 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:24,916 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:158] 2016-05-12 07:58:24,925 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:187] 2016-05-12 07:58:41,475 > get_health
+[INFO|views.py:137] 2016-05-12 07:58:41,476 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:41,477 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:158] 2016-05-12 07:58:41,480 > {
+    "healthy": true
+}
+[INFO|views.py:195] 2016-05-12 07:58:41,481 > get_memory
+[INFO|views.py:137] 2016-05-12 07:58:41,481 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:41,481 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:158] 2016-05-12 07:58:41,490 > {
+    "free": 1569712920,
+    "total": 2042626048
+}
+[INFO|views.py:199] 2016-05-12 07:58:41,490 > get_uptime
+[INFO|views.py:137] 2016-05-12 07:58:41,490 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:41,490 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:158] 2016-05-12 07:58:41,499 > {
+    "systemUptimeMsec": 4603587
+}
+[INFO|views.py:203] 2016-05-12 07:58:41,499 > get_tables
+[INFO|views.py:137] 2016-05-12 07:58:41,499 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:41,500 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:158] 2016-05-12 07:58:41,527 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]
+[INFO|views.py:171] 2016-05-12 07:58:41,569 > get_switch_port
+[INFO|views.py:171] 2016-05-12 07:58:41,569 > get_switch_port
+[INFO|views.py:137] 2016-05-12 07:58:41,569 > by using pycurl, __get function returns the response of the requested url.
+[INFO|views.py:137] 2016-05-12 07:58:41,569 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:141] 2016-05-12 07:58:41,570 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/port/json
+[DEBUG|views.py:141] 2016-05-12 07:58:41,570 > request_curl_url: http://127.0.0.1:8080/wm/core/switch/all/port/json
+[DEBUG|views.py:158] 2016-05-12 07:58:42,594 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "547000000",
+                        "durationSec": "28335",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "14243",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "545000000",
+                        "durationSec": "28335",
+                        "portNumber": "4",
+                        "receiveBytes": "1651104",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14115",
+                        "transmitBytes": "66614",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "784"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "547000000",
+                        "durationSec": "28317",
+                        "portNumber": "2",
+                        "receiveBytes": "60754",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "746",
+                        "transmitBytes": "1699210",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "14726"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "988000000",
+                        "durationSec": "28237",
+                        "portNumber": "13",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1671469",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "14395"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "838000000",
+                        "durationSec": "28238",
+                        "portNumber": "11",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "4016",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "41"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "844000000",
+                        "durationSec": "28238",
+                        "portNumber": "10",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "1794",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "21"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "120000000",
+                        "durationSec": "28245",
+                        "portNumber": "8",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "78",
+                        "transmitDropped": "3",
+                        "transmitErrors": "0",
+                        "transmitPackets": "1"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "496000000",
+                        "durationSec": "28335",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "14504",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "115000000",
+                        "durationSec": "28245",
+                        "portNumber": "9",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "3700",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "37"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "640000000",
+                        "durationSec": "28317",
+                        "portNumber": "5",
+                        "receiveBytes": "1699210",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14726",
+                        "transmitBytes": "60754",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "746"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "65000000",
+                        "durationSec": "28238",
+                        "portNumber": "12",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "5172",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "53"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "949000000",
+                        "durationSec": "28236",
+                        "portNumber": "14",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1671139",
+                        "transmitDropped": "5",
+                        "transmitErrors": "0",
+                        "transmitPackets": "14392"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "149000000",
+                        "durationSec": "28245",
+                        "portNumber": "7",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "718",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "9"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "219000000",
+                        "durationSec": "28317",
+                        "portNumber": "6",
+                        "receiveBytes": "5564",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "52",
+                        "transmitBytes": "1724597",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "15064"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "239000000",
+                        "durationSec": "28318",
+                        "portNumber": "4",
+                        "receiveBytes": "1605",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "15",
+                        "transmitBytes": "1730161",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "15116"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    }
+}
+[DEBUG|views.py:158] 2016-05-12 07:58:42,594 > {
+    "00:00:00:0c:29:e5:c0:55": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "547000000",
+                        "durationSec": "28335",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "14243",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "545000000",
+                        "durationSec": "28335",
+                        "portNumber": "4",
+                        "receiveBytes": "1651104",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14115",
+                        "transmitBytes": "66614",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "784"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "547000000",
+                        "durationSec": "28317",
+                        "portNumber": "2",
+                        "receiveBytes": "60754",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "746",
+                        "transmitBytes": "1699210",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "14726"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    },
+    "00:00:7a:ad:3a:28:d0:44": {
+        "port_reply": [
+            {
+                "port": [
+                    {
+                        "collisions": "0",
+                        "durationNsec": "988000000",
+                        "durationSec": "28237",
+                        "portNumber": "13",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1671469",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "14395"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "838000000",
+                        "durationSec": "28238",
+                        "portNumber": "11",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "4016",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "41"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "844000000",
+                        "durationSec": "28238",
+                        "portNumber": "10",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "1794",
+                        "transmitDropped": "1",
+                        "transmitErrors": "0",
+                        "transmitPackets": "21"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "120000000",
+                        "durationSec": "28245",
+                        "portNumber": "8",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "78",
+                        "transmitDropped": "3",
+                        "transmitErrors": "0",
+                        "transmitPackets": "1"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "496000000",
+                        "durationSec": "28335",
+                        "portNumber": "local",
+                        "receiveBytes": "0",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "0",
+                        "transmitBytes": "0",
+                        "transmitDropped": "14504",
+                        "transmitErrors": "0",
+                        "transmitPackets": "0"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "115000000",
+                        "durationSec": "28245",
+                        "portNumber": "9",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "3700",
+                        "transmitDropped": "2",
+                        "transmitErrors": "0",
+                        "transmitPackets": "37"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "640000000",
+                        "durationSec": "28317",
+                        "portNumber": "5",
+                        "receiveBytes": "1699210",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "14726",
+                        "transmitBytes": "60754",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "746"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "65000000",
+                        "durationSec": "28238",
+                        "portNumber": "12",
+                        "receiveBytes": "864",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "10",
+                        "transmitBytes": "5172",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "53"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "949000000",
+                        "durationSec": "28236",
+                        "portNumber": "14",
+                        "receiveBytes": "1074",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "13",
+                        "transmitBytes": "1671139",
+                        "transmitDropped": "5",
+                        "transmitErrors": "0",
+                        "transmitPackets": "14392"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "149000000",
+                        "durationSec": "28245",
+                        "portNumber": "7",
+                        "receiveBytes": "648",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "8",
+                        "transmitBytes": "718",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "9"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "219000000",
+                        "durationSec": "28317",
+                        "portNumber": "6",
+                        "receiveBytes": "5564",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "52",
+                        "transmitBytes": "1724597",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "15064"
+                    },
+                    {
+                        "collisions": "0",
+                        "durationNsec": "239000000",
+                        "durationSec": "28318",
+                        "portNumber": "4",
+                        "receiveBytes": "1605",
+                        "receiveCRCErrors": "0",
+                        "receiveDropped": "0",
+                        "receiveErrors": "0",
+                        "receiveFrameErrors": "0",
+                        "receiveOverrunErrors": "0",
+                        "receivePackets": "15",
+                        "transmitBytes": "1730161",
+                        "transmitDropped": "0",
+                        "transmitErrors": "0",
+                        "transmitPackets": "15116"
+                    }
+                ],
+                "version": "OF_13"
+            }
+        ]
+    }
+}
