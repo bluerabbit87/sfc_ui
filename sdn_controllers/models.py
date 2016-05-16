@@ -15,10 +15,14 @@ class SDNController(models.Model):
     memory          = models.CharField(max_length=50,default="unknown")
     uptime          = models.CharField(max_length=50,default="unknown")
     tables          = models.CharField(max_length=50,default="unknown")
+    role            = models.CharField(max_length=50,default="unknown")
+    summary         = models.CharField(max_length=50,default="unknown")
+    tables          = models.CharField(max_length=50,default="unknown")
     host            = models.ForeignKey(Host)
+
     
 class OpenFlowSwitch(models.Model):
-    uuid                    = models.CharField(primary_key=True, max_length=50,default="unknown")
+    dpid                    = models.CharField(primary_key=True, max_length=50,default="unknown")
     datapathDescription     = models.CharField(max_length=50,default="unknown")
     hardwareDescription     = models.CharField(max_length=50,default="unknown")
     manufacturerDescription = models.CharField(max_length=50,default="unknown")
@@ -26,7 +30,7 @@ class OpenFlowSwitch(models.Model):
     softwareDescription     = models.CharField(max_length=50,default="unknown")
     version                 = models.CharField(max_length=50,default="unknown")
 
-class OpenflowRule(models.Model):
+class OpenFlowEntry(models.Model):
     owner_switch            = models.ForeignKey(OpenFlowSwitch)
     byteCount               = models.CharField(max_length=50,default="unknown")
     cookie                  = models.CharField(max_length=50,default="unknown")
@@ -42,8 +46,10 @@ class OpenflowRule(models.Model):
     tableId                 = models.CharField(max_length=50,default="unknown")
     version                 = models.CharField(max_length=50,default="unknown")
     
-class OpenflowPort(models.Model):    
+class OpenFlowPort(models.Model):    
+    id                      = models.AutoField(primary_key=True,default=None)
     owner_switch            = models.ForeignKey(OpenFlowSwitch)
+    version                 = models.CharField(max_length=50,default="unknown")
     collisions              = models.CharField(max_length=50,default="unknown")
     durationNsec            = models.CharField(max_length=50,default="unknown")
     durationSec             = models.CharField(max_length=50,default="unknown")
@@ -59,5 +65,3 @@ class OpenflowPort(models.Model):
     transmitDropped         = models.CharField(max_length=50,default="unknown")
     transmitErrors          = models.CharField(max_length=50,default="unknown")
     transmitPackets         = models.CharField(max_length=50,default="unknown")
-
- 

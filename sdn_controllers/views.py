@@ -1,17 +1,21 @@
 # encoding: utf-8
 import cStringIO
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 import json
 import logging
 import pprint
 import pycurl
+import requests
 from rest_framework import mixins, viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 
-from sdn_controllers.models import SDNController
-from sdn_controllers.serializers import SDNControllerSerializer
+from sdn_controllers.models import SDNController, OpenFlowSwitch, OpenFlowEntry, \
+    OpenFlowPort
+from sdn_controllers.serializers import SDNControllerSerializer, \
+    OpenFlowSwitchSerializer, OpenFlowEntrySerializer, OpenFlowPortSerializer
 
 
 class OpenFlowHandler(object):
@@ -218,89 +222,259 @@ class SDNControllerViewSet(mixins.ListModelMixin,
     queryset = SDNController.objects.all()
     serializer_class = SDNControllerSerializer
     
-    def check_status(self, host_info):
-        try:
-            openflow = OpenFlowHandler(host_info.mgmt_ip,host_info.mgmt_port)
-            host_info.health = openflow.get_health()
-            host_info.memory = openflow.get_memory()
-            host_info.uptime = openflow.get_sys_uptime()
-            host_info.tables = openflow.get_tables()
-            host_info.status = "Good"
-            host_info.save()
-        except Exception:
-            host_info.status = "Not, Good"
-            host_info.save()
+    url_switch_desc = '/wm/core/switch/all/desc/json'
+    url_switch_port = '/wm/core/switch/all/port/json'
+    url_switch_flow = '/wm/core/switch/all/flow/json'
+    url_topology_link = '/wm/topology/links/json'
+    url_device = '/wm/device'
+    url_route = '/wm/topology/route'
+    url_static_flow_pusher = '/wm/staticflowpusher/json'
+    url_health = '/wm/core/health/json'
     
-    
-    def UpdateFloodlightSwitche(self, host_info):
-        openflow = OpenFlowHandler(host_info.mgmt_ip,host_info.mgmt_port)
-#         result = openflow.get_switch_desc()
-#         print result
-#         result = openflow.get_switch_flow()
-#         print result
-        result = openflow.get_switch_port()
-        print result
-
-        #pprint.pprint (result)
+    def check_status(self, cont_info):
+        connection_url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port
         
-#         
-#          
-#                                                 _uuid = row["_uuid"],
-#                                                 controller = row["controller"],
-#                                                 datapath_id = row["datapath_id"],
-#                                                 datapath_type = row["datapath_type"],
-#                                                 external_ids = row["external_ids"],
-#                                                 fail_mode = row["fail_mode"],
-#                                                 flood_vlans = row["flood_vlans"],
-#                                                 flow_tables = row["flow_tables"],
-#                                                 ipfix = row["ipfix"],
-#                                                 mirrors = row["mirrors"],
-#                                                 name = row["name"],
-#                                                 netflow = row["netflow"],
-#                                                 other_config = row["other_config"],
-#                                                 ports = row["ports"],
-#                                                 protocols = row["protocols"],
-#                                                 sflow = row["sflow"],
-#                                                 status = row["status"],
-#                                                 stp_enable = row["stp_enable"],
-#                                               )
-#                     new_ovsbridge = OVSBridge(
-#                     new_ovsbridge = OVSBridge.objects.get(pk = row["_uuid"])
-#                     new_ovsbridge.controller = row["controller"]
-#                     new_ovsbridge.datapath_id = row["datapath_id"]
-#                     new_ovsbridge.datapath_type = row["datapath_type"]
-#                     new_ovsbridge.external_ids = row["external_ids"]
-#                     new_ovsbridge.fail_mode = row["fail_mode"]
-#                     new_ovsbridge.flood_vlans = row["flood_vlans"]
-#                     new_ovsbridge.flow_tables = row["flow_tables"]
-#                     new_ovsbridge.ipfix = row["ipfix"]
-#                     new_ovsbridge.mirrors = row["mirrors"]
-#                     new_ovsbridge.name = row["name"]
-#                     new_ovsbridge.netflow = row["netflow"]
-#                     new_ovsbridge.other_config = row["other_config"]
-#                     new_ovsbridge.ports = row["ports"]
-#                     new_ovsbridge.protocols = row["protocols"]
-#                     new_ovsbridge.save()
-#                     new_ovsbridge.save()
-#                     new_ovsbridge.sflow = row["sflow"]
-#                     new_ovsbridge.status = row["status"]
-#                     new_ovsbridge.stp_enable = row["stp_enable"]
-#                     print "Update OVS Bridge"
-#                     print "add OVS Bridge" 
-#                 except ObjectDoesNotExist as Detail:
-#                 print row
-#                 try:
-#             for row in result["rows"]:
-#             print type(Detail)
-#             results = self.ovsdbManager.transact(["Open_vSwitch",{"op":"select","table":"Bridge","where":[]}])
-#             return
-#         except Exception as Detail:
-#         for result in results["result"]:
-#         results = []
-#         try:
-#     def UpdateOVSBridge(self, host_info):
-    
-    
+        health_response = requests.get(connection_url+self.url_health)
+        if (health_response.status_code == 200):
+            cont_info.health = health_response.json()
+        else:
+            cont_info.health = "unknown"
+        
+        memory_response = requests.get(connection_url+"/wm/core/memory/json")
+        if (memory_response.status_code == 200):
+            cont_info.memory = memory_response.json()
+        else:
+            cont_info.memory = "unknown"
+        
+        uptime_response = requests.get(connection_url+"/wm/core/system/uptime/json")
+        if (uptime_response.status_code == 200):
+            cont_info.uptime = uptime_response.json()
+        else:
+            cont_info.uptime = "unknown"
+        
+        tables_response = requests.get(connection_url+"/wm/core/storage/tables/json")
+        if (tables_response.status_code == 200):
+            cont_info.tables = tables_response.json()
+        else:
+            cont_info.tables = "unknown"
+        
+        role_response = requests.get(connection_url+"/wm/core/role/json")
+        if (role_response.status_code == 200):
+            cont_info.role = role_response.json()
+        else:
+            cont_info.role = "unknown"
+        
+        summary_response = requests.get(connection_url+"/wm/core/controller/summary/json")
+        if (summary_response.status_code == 200):
+            cont_info.summary = summary_response.json()
+        else:
+            cont_info.summary = "unknown"
+        
+        
+        
+        if ((health_response.status_code == 200) and
+            (memory_response.status_code == 200) and
+            (uptime_response.status_code == 200) and
+            (tables_response.status_code == 200)):
+            cont_info.status = "Good"
+        else:
+            cont_info.status = "unknown"    
+        cont_info.save()
+        
+    def UpdateFloodlightSwitche(self, cont_info):
+        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/core/switch/all/desc/json"
+        response = requests.get(url)
+        result = response.json()
+        
+        for (key,value) in result.items():
+            try:
+                print key
+                new_of_switch =  OpenFlowSwitch.objects.get(pk = key)
+                new_of_switch.softwareDescription = value['desc']['softwareDescription']
+                new_of_switch.datapathDescription = value['desc']['datapathDescription']
+                new_of_switch.hardwareDescription = value['desc']['hardwareDescription']
+                new_of_switch.manufacturerDescription = value['desc']['manufacturerDescription']
+                new_of_switch.serialNumber = value['desc']['serialNumber']
+                new_of_switch.version = value['desc']['version']
+                new_of_switch.save()
+                
+            except:
+                new_of_switch = OpenFlowSwitch(dpid = key,
+                                                softwareDescription = value['desc']['softwareDescription'],
+                                                datapathDescription = value['desc']['datapathDescription'],
+                                                hardwareDescription = value['desc']['hardwareDescription'],
+                                                manufacturerDescription = value['desc']['manufacturerDescription'],
+                                                serialNumber = value['desc']['serialNumber'],
+                                                version = value['desc']['version'])
+                new_of_switch.save()
+
+    def UpdateFloodlightPort(self, cont_info):
+        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/core/switch/all/port/json"
+        print url
+        response = requests.get(url)
+        results = response.json()
+        
+        for (switch_dpid,values) in results.items():
+            print switch_dpid
+            for value in values["port_reply"]:
+                ports =  value["port"]
+                for port in ports:
+                    print port
+                    try:
+                            new_port = OpenFlowPort.objects.get(owner_switch = switch_dpid, portNumber = port["portNumber"] )
+                            new_port.version        = value["version"]            
+                            new_port.collisions     = port["collisions"]              
+                            if (value["version"] == "OF_13"):
+                                new_port.durationSec    = port["durationSec"]             
+                                new_port.durationNsec   = port["durationNsec"]    
+                            #new_port.portNumber     = port["portNumber"]              
+                            new_port.receiveBytes   = port["receiveBytes"]            
+                            new_port.receiveCRCErrors = port["receiveCRCErrors"]        
+                            new_port.receiveDropped     = port["receiveDropped"]          
+                            new_port.receiveErrors      = port["receiveErrors"]           
+                            new_port.receiveFrameErrors = port["receiveFrameErrors"]      
+                            new_port.receiveOverrunErrors = port["receiveOverrunErrors"]    
+                            new_port.receivePackets     = port["receivePackets"]          
+                            new_port.transmitBytes      = port["transmitBytes"]           
+                            new_port.transmitDropped    = port["transmitDropped"]         
+                            new_port.transmitErrors     = port["transmitErrors"]          
+                            new_port.transmitPackets    = port["transmitPackets"]         
+                            new_port.save()
+                    except ObjectDoesNotExist:
+                        if (value["version"] == "OF_13"):
+                                durationSec    = port["durationSec"]             
+                                durationNsec   = port["durationNsec"]
+                        elif (value["version"] == "OF_10"):
+                                durationSec    = "unknown"        
+                                durationNsec   = "unknown"
+                            
+                        new_port        = OpenFlowPort (owner_switch = OpenFlowSwitch.objects.get(pk = switch_dpid),
+                                        portNumber      = port["portNumber"],
+                                        version        = value["version"],
+                                        collisions     = port["collisions"],              
+                                        durationNsec   = durationSec,            
+                                        durationSec    = durationNsec,                    
+                                        receiveBytes   = port["receiveBytes"],            
+                                        receiveCRCErrors = port["receiveCRCErrors"],        
+                                        receiveDropped     = port["receiveDropped"],         
+                                        receiveErrors      = port["receiveErrors"],           
+                                        receiveFrameErrors = port["receiveFrameErrors"],      
+                                        receiveOverrunErrors = port["receiveOverrunErrors"],    
+                                        receivePackets     = port["receivePackets"],          
+                                        transmitBytes      = port["transmitBytes"],           
+                                        transmitDropped    = port["transmitDropped"],         
+                                        transmitErrors     = port["transmitErrors"],          
+                                        transmitPackets    = port["transmitPackets"])
+                        new_port.save()
+    def UpdateFloodlightFlowEntry(self, cont_info):
+        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/core/switch/all/flow/json"
+        print url
+        response = requests.get(url)
+        results = response.json()
+        
+        for (switch_dpid,values) in results.items():
+            print (switch_dpid,values)
+            for flow in values["flows"]:
+                try:
+                    if flow['version'] == u'OF_13':
+                        new_flow = OpenFlowEntry.objects.get(owner_switch = switch_dpid, cookie = flow['cookie'],tableId = flow['tableId'], instructions = flow['instructions'])
+                    else:
+                        new_flow = OpenFlowEntry.objects.get(owner_switch = switch_dpid, cookie = flow['cookie'],tableId = flow['tableId'], instructions = flow['actions'])
+                    
+                    new_flow.priority           = flow['priority']
+                    new_flow.durationNSeconds   = flow['durationNSeconds']
+                    new_flow.idleTimeoutSec     = flow['idleTimeoutSec']
+                    new_flow.durationSeconds    = flow['durationSeconds']
+                    new_flow.version            = flow['version']
+                    new_flow.byteCount          = flow['byteCount']
+                    #new_flow.tableId            = flow['tableId']
+                    new_flow.packetCount        = flow['packetCount']         
+                    new_flow.hardTimeoutSec     = flow['hardTimeoutSec']
+                    #new_flow.cookie             = flow['cookie']
+                    #new_flow.match              = flow['match']
+                    if flow['version'] == u'OF_13':
+                        new_flow.flags          = flow['flags']
+                    #    new_flow.instructions   = flow['instructions']
+                    else:
+                    #    new_flow.instructions        = flow['actions']
+                        pass
+                    new_flow.save()
+                except ObjectDoesNotExist:
+                    if flow['version'] == u'OF_13':
+                        flags          = flow['flags']
+                        instructions   = flow['instructions']
+                    else:
+                        flags           = "known"
+                        instructions    = flow['actions']
+                    new_flow = OpenFlowEntry(owner_switch = OpenFlowSwitch.objects.get(pk=switch_dpid),
+                                            priority           = flow['priority'],
+                                            durationNSeconds   = flow['durationNSeconds'],
+                                            idleTimeoutSec     = flow['idleTimeoutSec'],
+                                            durationSeconds    = flow['durationSeconds'],
+                                            byteCount          = flow['byteCount'],
+                                            tableId            = flow['tableId'],
+                                            version            = flow['version'],
+                                            packetCount        = flow['packetCount'],   
+                                            hardTimeoutSec     = flow['hardTimeoutSec'],
+                                            cookie             = flow['cookie'],
+                                            match              = flow['match'],
+                                            flags              = flags,
+                                            instructions       = instructions)
+                    new_flow.save()
+
+
+            #for value in values["flows"]:
+            #    print 
+            #    ports =  value["port"]
+#                 for port in ports:
+#                     print port
+#                     try:
+#                             new_port = OpenFlowPort.objects.get(owner_switch = switch_dpid, portNumber = port["portNumber"] )
+#                             new_port.version        = value["version"]            
+#                             new_port.collisions     = port["collisions"]              
+#                             if (value["version"] == "OF_13"):
+#                                 new_port.durationSec    = port["durationSec"]             
+#                                 new_port.durationNsec   = port["durationNsec"]    
+#                             #new_port.portNumber     = port["portNumber"]              
+#                             new_port.receiveBytes   = port["receiveBytes"]            
+#                             new_port.receiveCRCErrors = port["receiveCRCErrors"]        
+#                             new_port.receiveDropped     = port["receiveDropped"]          
+#                             new_port.receiveErrors      = port["receiveErrors"]           
+#                             new_port.receiveFrameErrors = port["receiveFrameErrors"]      
+#                             new_port.receiveOverrunErrors = port["receiveOverrunErrors"]    
+#                             new_port.receivePackets     = port["receivePackets"]          
+#                             new_port.transmitBytes      = port["transmitBytes"]           
+#                             new_port.transmitDropped    = port["transmitDropped"]         
+#                             new_port.transmitErrors     = port["transmitErrors"]          
+#                             new_port.transmitPackets    = port["transmitPackets"]         
+#                             new_port.save()
+#                     except ObjectDoesNotExist:
+#                         if (value["version"] == "OF_13"):
+#                                 durationSec    = port["durationSec"]             
+#                                 durationNsec   = port["durationNsec"]
+#                         elif (value["version"] == "OF_10"):
+#                                 durationSec    = "unknown"        
+#                                 durationNsec   = "unknown"
+#                             
+#                         new_port        = OpenFlowPort (owner_switch = OpenFlowSwitch.objects.get(pk = switch_dpid),
+#                                         portNumber      = port["portNumber"],
+#                                         version        = value["version"],
+#                                         collisions     = port["collisions"],              
+#                                         durationNsec   = durationSec,            
+#                                         durationSec    = durationNsec,                    
+#                                         receiveBytes   = port["receiveBytes"],            
+#                                         receiveCRCErrors = port["receiveCRCErrors"],        
+#                                         receiveDropped     = port["receiveDropped"],         
+#                                         receiveErrors      = port["receiveErrors"],           
+#                                         receiveFrameErrors = port["receiveFrameErrors"],      
+#                                         receiveOverrunErrors = port["receiveOverrunErrors"],    
+#                                         receivePackets     = port["receivePackets"],          
+#                                         transmitBytes      = port["transmitBytes"],           
+#                                         transmitDropped    = port["transmitDropped"],         
+#                                         transmitErrors     = port["transmitErrors"],          
+#                                         transmitPackets    = port["transmitPackets"])
+#                         new_port.save()            
+            
     def perform_create(self, serializer):
         serializer.save()
 
@@ -314,8 +488,23 @@ class SDNControllerViewSet(mixins.ListModelMixin,
     def retrieve(self, request, pk=None):
         print "cont Controller retrieve"
         cont_info = get_object_or_404(self.queryset, pk=pk)
-        self.check_status(cont_info)
-        self.UpdateFloodlightSwitche(cont_info)
+        #self.check_status(cont_info)
+        #self.UpdateFloodlightSwitche(cont_info)
+        #self.UpdateFloodlightPort(cont_info)
+        self.UpdateFloodlightFlowEntry(cont_info)
         #self.update_instances(vim_environment)
         serializer = self.serializer_class(cont_info)
-        return Response(serializer.data)    
+        return Response(serializer.data)
+    
+
+class OpenFlowSwitchViewSet(viewsets.ModelViewSet):
+    queryset = OpenFlowSwitch.objects.all()
+    serializer_class = OpenFlowSwitchSerializer
+
+class OpenFlowEntryViewSet(viewsets.ModelViewSet):
+    queryset = OpenFlowEntry.objects.all()
+    serializer_class = OpenFlowEntrySerializer
+    
+class OpenFlowPortViewSet(viewsets.ModelViewSet):
+    queryset = OpenFlowPort.objects.all()
+    serializer_class = OpenFlowPortSerializer
