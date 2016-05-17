@@ -1,15 +1,11 @@
 from __future__ import unicode_literals
-
 from django.db import models
-
-import uuid
-
 
 class SDNController(models.Model):
     id              = models.AutoField(primary_key=True,default=None)
     mgmt_ip         = models.CharField(max_length=50,default="unknown")
     mgmt_port       = models.CharField(max_length=50,default="unknown")
-    status          = models.CharField(max_length=50,default="unknown")
+    status          = models.CharField(max_length=200,default="unknown")
     health          = models.CharField(max_length=50,default="unknown")
     memory          = models.CharField(max_length=50,default="unknown")
     uptime          = models.CharField(max_length=50,default="unknown")
