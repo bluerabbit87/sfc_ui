@@ -13,10 +13,9 @@ class SDNController(models.Model):
     health          = models.CharField(max_length=50,default="unknown")
     memory          = models.CharField(max_length=50,default="unknown")
     uptime          = models.CharField(max_length=50,default="unknown")
-    tables          = models.CharField(max_length=50,default="unknown")
-    role            = models.CharField(max_length=50,default="unknown")
-    summary         = models.CharField(max_length=50,default="unknown")
-    tables          = models.CharField(max_length=50,default="unknown")
+    tables          = models.CharField(max_length=300,default="unknown")
+    role            = models.CharField(max_length=200,default="unknown")
+    summary         = models.CharField(max_length=100,default="unknown")
     
     
 class OpenFlowSwitch(models.Model):

@@ -26,99 +26,57 @@ class SDNControllerViewSet(mixins.ListModelMixin,
     queryset = SDNController.objects.all()
     serializer_class = SDNControllerSerializer
     
-    def __update_controller_status(self, cont_info):
-        print "__update_controller_status"
-        connection_url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port
+    def __update_controller_status(self, controller_info):
+        print "__update_controller_status is started"
+        urls = 'http://'+controller_info.mgmt_ip+":"+controller_info.mgmt_port
         
         try:
-            health_response = requests.get(connection_url+'/wm/core/health/json')
+            health_response = requests.get(urls+'/wm/core/health/json')
             print health_response.json()
-            cont_info.health = health_response.json()
+            controller_info.health = health_response.json()
             
-            memory_response = requests.get(connection_url+"/wm/core/memory/json")
+            memory_response = requests.get(urls+"/wm/core/memory/json")
             print memory_response.json()
-            cont_info.memory = memory_response.json()
+            controller_info.memory = memory_response.json()
         
-            uptime_response = requests.get(connection_url+"/wm/core/system/uptime/json")
+            uptime_response = requests.get(urls+"/wm/core/system/uptime/json")
             print uptime_response.json()
-            cont_info.uptime = uptime_response.json()
+            controller_info.uptime = uptime_response.json()
             
-            tables_response = requests.get(connection_url+"/wm/core/storage/tables/json")
+            tables_response = requests.get(urls+"/wm/core/storage/tables/json")
             print tables_response.json()
-            cont_info.tables = tables_response.json()
+            controller_info.tables = tables_response.json()
     
-            role_response = requests.get(connection_url+"/wm/core/role/json")
+            role_response = requests.get(urls+"/wm/core/role/json")
             print role_response.json()
-            cont_info.role = role_response.json()
+            controller_info.role = role_response.json()
             
-            summary_response = requests.get(connection_url+"/wm/core/controller/summary/json")
+            summary_response = requests.get(urls+"/wm/core/controller/summary/json")
             print summary_response.json()
-            cont_info.summary = summary_response.json()
+            controller_info.summary = summary_response.json()
     
-            cont_info.status = "Good"
-            cont_info.save()
+            controller_info.status = "Good"
+            controller_info.save()
             print "__update_controller_status is completed"
             return 0
         
         except Exception as detail:
-            cont_info.status = detail.message
-            cont_info.save()
+            controller_info.status = detail.message
+            controller_info.save()
             print "__update_controller_status is failure caused by %s" % detail.message
             return -1
         
-    def UpdateFloodlightTopologyLink(self, cont_info):
-        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/topology/links/json"
+    def __update_ports_status(self, controller_info):
+
+        url = 'http://'+controller_info.mgmt_ip+":"+controller_info.mgmt_port+"/wm/core/switch/all/port/json"
         try:
             response = requests.get(url)
             results = response.json()
         except Exception as detail:
-            cont_info.status = detail.message
-            cont_info.save()
-        
-        OpenFlowTopologyLink.objects.filter(owner_controller=cont_info).delete()
-        for value in results:
-            newTopologyLink =  OpenFlowTopologyLink(owner_controller=cont_info,
-                                                    direction = value['direction'],
-                                                    src_port = value['src_port'],
-                                                    src_switch = value['src_switch'],
-                                                    dst_port= value['dst_port'],
-                                                    dst_switch = value['dst_switch'],
-                                                    type = value['type'])
-            newTopologyLink.save()
-         
-    def UpdateFloodlightSwitche(self, cont_info):
-        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/core/switch/all/desc/json"
-        response = requests.get(url)
-        result = response.json()
-        
-        for (key,value) in result.items():
-            try:
-                print key
-                new_of_switch =  OpenFlowSwitch.objects.get(pk = key)
-                new_of_switch.softwareDescription = value['desc']['softwareDescription']
-                new_of_switch.datapathDescription = value['desc']['datapathDescription']
-                new_of_switch.hardwareDescription = value['desc']['hardwareDescription']
-                new_of_switch.manufacturerDescription = value['desc']['manufacturerDescription']
-                new_of_switch.serialNumber = value['desc']['serialNumber']
-                new_of_switch.version = value['desc']['version']
-                new_of_switch.save()
-                
-            except:
-                new_of_switch = OpenFlowSwitch(dpid = key,
-                                                softwareDescription = value['desc']['softwareDescription'],
-                                                datapathDescription = value['desc']['datapathDescription'],
-                                                hardwareDescription = value['desc']['hardwareDescription'],
-                                                manufacturerDescription = value['desc']['manufacturerDescription'],
-                                                serialNumber = value['desc']['serialNumber'],
-                                                version = value['desc']['version'])
-                new_of_switch.save()
-
-    def UpdateFloodlightPort(self, cont_info):
-        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/core/switch/all/port/json"
-        print url
-        response = requests.get(url)
-        results = response.json()
-        
+            controller_info.status = detail.message
+            controller_info.save()
+            print "__update_ports_status is failure caused by %s" % detail.message
+            return -1
         
         for (switch_dpid,values) in results.items():
             print switch_dpid
@@ -172,9 +130,60 @@ class SDNControllerViewSet(mixins.ListModelMixin,
                                         transmitErrors     = port["transmitErrors"],          
                                         transmitPackets    = port["transmitPackets"])
                         new_port.save()
+
+    def UpdateFloodlightTopologyLink(self, controller_info):
+        url = 'http://'+controller_info.mgmt_ip+":"+controller_info.mgmt_port+"/wm/topology/links/json"
+        try:
+            response = requests.get(url)
+            results = response.json()
+        except Exception as detail:
+            controller_info.status = detail.message
+            controller_info.save()
+        
+        OpenFlowTopologyLink.objects.filter(owner_controller=controller_info).delete()
+        for value in results:
+            newTopologyLink =  OpenFlowTopologyLink(owner_controller=controller_info,
+                                                    direction = value['direction'],
+                                                    src_port = value['src_port'],
+                                                    src_switch = value['src_switch'],
+                                                    dst_port= value['dst_port'],
+                                                    dst_switch = value['dst_switch'],
+                                                    type = value['type'])
+            newTopologyLink.save()
+         
+    def UpdateFloodlightSwitche(self, controller_info):
+        url = 'http://'+controller_info.mgmt_ip+":"+controller_info.mgmt_port+"/wm/core/switch/all/desc/json"
+        response = requests.get(url)
+        result = response.json()
+        
+        for (key,value) in result.items():
+            try:
+                print key
+                new_of_switch =  OpenFlowSwitch.objects.get(pk = key)
+                
+                new_of_switch.softwareDescription = value['desc']['softwareDescription']
+                new_of_switch.datapathDescription = value['desc']['datapathDescription']
+                new_of_switch.hardwareDescription = value['desc']['hardwareDescription']
+                new_of_switch.manufacturerDescription = value['desc']['manufacturerDescription']
+                new_of_switch.serialNumber = value['desc']['serialNumber']
+                new_of_switch.version = value['desc']['version']
+                new_of_switch.save()
+                
+            except:
+                new_of_switch = OpenFlowSwitch(dpid = key,
+                                                owner_controller = controller_info,
+                                                softwareDescription = value['desc']['softwareDescription'],
+                                                datapathDescription = value['desc']['datapathDescription'],
+                                                hardwareDescription = value['desc']['hardwareDescription'],
+                                                manufacturerDescription = value['desc']['manufacturerDescription'],
+                                                serialNumber = value['desc']['serialNumber'],
+                                                version = value['desc']['version'])
+                new_of_switch.save()
+
+    
                                                 
-    def UpdateFloodlightFlowEntry(self, cont_info):
-        url = 'http://'+cont_info.mgmt_ip+":"+cont_info.mgmt_port+"/wm/core/switch/all/flow/json"
+    def UpdateFloodlightFlowEntry(self, controller_info):
+        url = 'http://'+controller_info.mgmt_ip+":"+controller_info.mgmt_port+"/wm/core/switch/all/flow/json"
         print url
         response = requests.get(url)
         results = response.json()
@@ -221,9 +230,21 @@ class SDNControllerViewSet(mixins.ListModelMixin,
 
     def retrieve(self, request, pk=None):
         controller_info = get_object_or_404(self.queryset, pk=pk)
-        self.__update_controller_status(controller_info)
+        
+        result = self.__update_controller_status(controller_info)
+        if result == -1:
+            print "__update_controller_status is failure"
+            serializer = self.serializer_class(controller_info)
+            return Response(serializer.data)
+        
+        result = self.__update_ports_status(controller_info)
+        if result == -1:
+            print "__update_ports_status is failure"
+            serializer = self.serializer_class(controller_info)
+            return Response(serializer.data)
+        
+        
         #self.UpdateFloodlightSwitche(controller_info)
-        #self.UpdateFloodlightPort(controller_info)
         #self.UpdateFloodlightFlowEntry(controller_info)
         #self.UpdateFloodlightTopologyLink(controller_info)
         #self.update_instances(vim_environment)
