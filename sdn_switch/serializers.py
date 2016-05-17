@@ -46,6 +46,7 @@ class OVSBridgeSerializer(serializers.ModelSerializer):
         model = OVSBridge
         fields = (
                 "_uuid",
+                "owner_Host",
                 "controller",
                 "datapath_id",
                 "datapath_type",
@@ -68,6 +69,7 @@ class OVSPortSerializer(serializers.ModelSerializer):
     class Meta:
         model = OVSPort
         fields = ("_uuid",
+            "owner_Bridge",
             "bond_active_slave",
             "bond_downdelay",
             "bond_fake_iface",
@@ -91,6 +93,7 @@ class OVSInterfaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = OVSInterface
         fields = (  "_uuid",
+                    'owner_host'
                     "admin_state",
                     "bfd",
                     "bfd_status",

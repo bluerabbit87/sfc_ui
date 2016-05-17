@@ -5,12 +5,8 @@ Created on May 11, 2016
 '''
 from rest_framework import serializers
 
-from sdn_controllers.models import SDNController, OpenFlowSwitch,  \
-    OpenFlowEntry, OpenFlowPort
-from sdn_switch.models import OpenvSwitch, Host, OVSBridge, OVSPort, \
-    OVSInterface
-from sfc.models import service_function
-
+from sdn_controllers.models import SDNController, OpenFlowSwitch, \
+    OpenFlowEntry, OpenFlowPort, OpenFlowTopologyLink
 
 class SDNControllerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,14 +20,14 @@ class SDNControllerSerializer(serializers.ModelSerializer):
                     "uptime",
                     "tables",
                     "role",
-                    "summary",
-                    "host")
+                    "summary")
         
  
 class OpenFlowSwitchSerializer(serializers.ModelSerializer):
     class Meta:
         model = OpenFlowSwitch
-        fields = (      "dpid",                 
+        fields = (      "owner_controller",      
+                        "dpid",                 
                         "datapathDescription",     
                         "hardwareDescription",     
                         "manufacturerDescription", 
@@ -80,3 +76,15 @@ class OpenFlowPortSerializer(serializers.ModelSerializer):
                     "transmitErrors",          
                     "transmitPackets"         
                   )
+        
+class OpenFlowTopologyLinkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OpenFlowTopologyLink
+        fields = (
+                "owner_controller",
+                "direction",               
+                "src_port",                
+                "src_switch",              
+                "dst_port",                
+                "dst_switch",              
+                "type")                    

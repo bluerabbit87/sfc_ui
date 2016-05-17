@@ -2630,3 +2630,35 @@
         ]
     }
 }
+[INFO|views.py:188] 2016-05-13 04:18:28,131 > get_health
+[INFO|views.py:138] 2016-05-13 04:18:28,135 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:142] 2016-05-13 04:18:28,139 > request_curl_url: http://127.0.0.1:8080/wm/core/health/json
+[DEBUG|views.py:159] 2016-05-13 04:18:28,347 > {
+    "healthy": true
+}
+[INFO|views.py:196] 2016-05-13 04:18:28,347 > get_memory
+[INFO|views.py:138] 2016-05-13 04:18:28,348 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:142] 2016-05-13 04:18:28,348 > request_curl_url: http://127.0.0.1:8080/wm/core/memory/json
+[DEBUG|views.py:159] 2016-05-13 04:18:28,408 > {
+    "free": 1824996208,
+    "total": 2042626048
+}
+[INFO|views.py:200] 2016-05-13 04:18:28,408 > get_uptime
+[INFO|views.py:138] 2016-05-13 04:18:28,408 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:142] 2016-05-13 04:18:28,408 > request_curl_url: http://127.0.0.1:8080/wm/core/system/uptime/json
+[DEBUG|views.py:159] 2016-05-13 04:18:28,472 > {
+    "systemUptimeMsec": 49342
+}
+[INFO|views.py:204] 2016-05-13 04:18:28,473 > get_tables
+[INFO|views.py:138] 2016-05-13 04:18:28,474 > by using pycurl, __get function returns the response of the requested url.
+[DEBUG|views.py:142] 2016-05-13 04:18:28,474 > request_curl_url: http://127.0.0.1:8080/wm/core/storage/tables/json
+[DEBUG|views.py:159] 2016-05-13 04:18:28,526 > [
+    "controller_controller",
+    "controller_controllerinterface",
+    "controller_switchconfig",
+    "controller_forwardingconfig",
+    "controller_staticflowtableentry",
+    "controller_topologyconfig",
+    "controller_link",
+    "controller_firewallrules"
+]

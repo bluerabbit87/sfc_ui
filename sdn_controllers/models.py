@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from sdn_switch.models import Host
 import uuid
 
 
@@ -18,10 +17,10 @@ class SDNController(models.Model):
     role            = models.CharField(max_length=50,default="unknown")
     summary         = models.CharField(max_length=50,default="unknown")
     tables          = models.CharField(max_length=50,default="unknown")
-    host            = models.ForeignKey(Host)
-
+    
     
 class OpenFlowSwitch(models.Model):
+    owner_controller        = models.ForeignKey(SDNController)
     dpid                    = models.CharField(primary_key=True, max_length=50,default="unknown")
     datapathDescription     = models.CharField(max_length=50,default="unknown")
     hardwareDescription     = models.CharField(max_length=50,default="unknown")
@@ -65,3 +64,12 @@ class OpenFlowPort(models.Model):
     transmitDropped         = models.CharField(max_length=50,default="unknown")
     transmitErrors          = models.CharField(max_length=50,default="unknown")
     transmitPackets         = models.CharField(max_length=50,default="unknown")
+
+class OpenFlowTopologyLink(models.Model):    
+    owner_controller        = models.ForeignKey(SDNController)
+    direction               = models.CharField(max_length=50,default="unknown")
+    src_port                = models.CharField(max_length=50,default="unknown")
+    src_switch              = models.CharField(max_length=50,default="unknown")
+    dst_port                = models.CharField(max_length=50,default="unknown")
+    dst_switch              = models.CharField(max_length=50,default="unknown")
+    type                    = models.CharField(max_length=50,default="unknown")

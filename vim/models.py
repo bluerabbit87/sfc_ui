@@ -16,6 +16,16 @@ class VIM(models.Model):
     version             = models.CharField(max_length=50,default="Kilo",choices=[("Kilo","Kilo"),("Liberty",'Liberty'),("Mitaka",'Mitaka')])
     status              = models.CharField(max_length=100,default="unknown")
     
+    project_domain_id   
+    user_domain_id      
+    project_name        
+    tenant_name         
+    username            
+    password            
+    auth_url            
+    version             
+    status          
+    
 class Port(models.Model):
     owner_vim                   = models.ForeignKey(VIM)
     status                      = models.CharField(max_length=50,default="unknown")
@@ -93,7 +103,23 @@ class Server(models.Model):
     status                      = models.CharField(max_length=50,default="unknown")         
     tenant_id                   = models.CharField(max_length=50,default="unknown")         
     updated                     = models.CharField(max_length=50,default="unknown")         
-    user_id                     = models.CharField(max_length=50,default="unknown")         
+    user_id                     = models.CharField(max_length=50,default="unknown")   
+    
+    
+    addresses                   = models.CharField(max_length=50,default="unknown")         
+    created                     = models.CharField(max_length=50,default="unknown")         
+    flavor                      = models.CharField(max_length=50,default="unknown")         
+    hostId                      = models.CharField(max_length=50,default="unknown")         
+    id                          = models.CharField(primary_key=True,max_length=50,default="unknown")         
+    image                       = models.CharField(max_length=50,default="unknown")         
+    key_name                    = models.CharField(max_length=50,default="unknown",null=True, blank=True)         
+    links                       = models.CharField(max_length=50,default="unknown")         
+    metadata                    = models.CharField(max_length=50,default="unknown")         
+    security_groups             = models.CharField(max_length=50,default="unknown")         
+    status                      = models.CharField(max_length=50,default="unknown")         
+    tenant_id                   = models.CharField(max_length=50,default="unknown")         
+    updated                     = models.CharField(max_length=50,default="unknown")         
+    user_id                     = models.CharField(max_length=50,default="unknown")            
     
 class Interface(models.Model):
     owner_server                = models.ForeignKey(Server)

@@ -45,6 +45,12 @@ router.register(r'ovs_port', sdn_switch_views.OVSPortViewSet)
 router.register(r'ovs_interface', sdn_switch_views.OVSInterfaceViewSet)
 router.register(r'ovs_bridge', sdn_switch_views.OVSBridgeViewSet)
 router.register(r'sdn_controller', sdn_controller_views.SDNControllerViewSet)
+router.register(r'sdn_switch', sdn_controller_views.OpenFlowSwitchViewSet)
+router.register(r'sdn_flowentry', sdn_controller_views.OpenFlowEntryViewSet)
+router.register(r'sdn_port', sdn_controller_views.OpenFlowPortViewSet)
+router.register(r'sdn_topology_link', sdn_controller_views.OpenFlowTopologyLinkViewSet)
+
+
 
 urlpatterns = [
     url(r'^', include(router.urls)),

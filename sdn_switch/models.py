@@ -1,21 +1,22 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from sdn_controllers.models import SDNController
 from vim.models import Hypervisor
 
+
 class Host(models.Model):
-    id              = models.AutoField(primary_key=True,default=None)
+    id              = models.AutoField(primary_key=True)
     mgmt_ip         = models.CharField(max_length=50,default="unknown")
     mgmt_port       = models.CharField(max_length=50,default="unknown")
     mgmt_id         = models.CharField(max_length=50,default="unknown")
     mgmt_password   = models.CharField(max_length=50,default="unknown")
     status          = models.CharField(max_length=50,default="unknown")
     hypervisor      = models.ForeignKey(Hypervisor,default="unknown")
-    
+
 class OpenvSwitch(models.Model):
-    owner_Host      = models.ForeignKey(Host,default="unknown")
-    _uuid           = models.CharField(primary_key=True,max_length=50,default="unknown")
+    owner_Host      = models.ForeignKey(Host,default=None)
+    _uuid           = models.CharField(primary_key=True,max_length=50)
     _version        = models.CharField(max_length=50,default="unknown")
     bridges         = models.CharField(max_length=50,default="unknown")
     cur_cfg         = models.CharField(max_length=50,default="unknown")
@@ -32,7 +33,8 @@ class OpenvSwitch(models.Model):
 
 class OVSBridge(models.Model):
     _uuid           = models.CharField(primary_key=True,max_length=50,default="unknown")
-    controller      = models.CharField(max_length=50,default="unknown")
+    owner_Host      = models.ForeignKey(Host,default=None)
+    controller      = models.ForeignKey(SDNController,default=None)
     datapath_id     = models.CharField(max_length=50,default="unknown")
     datapath_type   = models.CharField(max_length=50,default="unknown")
     external_ids    = models.CharField(max_length=50,default="unknown")
@@ -53,6 +55,7 @@ class OVSBridge(models.Model):
 
 class OVSPort(models.Model):
     _uuid               = models.CharField(primary_key=True,max_length=50,default="unknown")
+    owner_Bridge        = models.ForeignKey(OVSBridge,default=None)
     bond_active_slave   = models.CharField(max_length=50,default="unknown")
     bond_downdelay      = models.CharField(max_length=50,default="unknown")
     bond_fake_iface     = models.CharField(max_length=50,default="unknown")
@@ -74,6 +77,7 @@ class OVSPort(models.Model):
 
 class Controller(models.Model):
     _uuid                   = models.CharField(primary_key=True,max_length=50,default="unknown")
+    owner_controller        = models.ForeignKey(SDNController,default=None)
     connection_mode         = models.CharField(max_length=50,default="unknown")
     controller_burst_limit  = models.CharField(max_length=50,default="unknown")
     controller_rate_limit   = models.CharField(max_length=50,default="unknown")
@@ -92,6 +96,7 @@ class Controller(models.Model):
 
 class OVSInterface(models.Model):
     _uuid                   = models.CharField(primary_key=True,max_length=50,default="unknown")
+    owner_host              = models.ForeignKey(Host,default=None)
     admin_state             = models.CharField(max_length=50,default="unknown")
     bfd                     = models.CharField(max_length=50,default="unknown")
     bfd_status              = models.CharField(max_length=50,default="unknown")

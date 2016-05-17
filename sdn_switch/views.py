@@ -206,6 +206,7 @@ class HostViewSet(mixins.ListModelMixin,
                                             trunks = row["trunks"],
                                             vlan_mode = row["vlan_mode"])
                     new_OVS_port.save()
+            print "complete port update"
                                             
     def UpdateOVSInterface(self, host_info):
         results = []
@@ -222,6 +223,7 @@ class HostViewSet(mixins.ListModelMixin,
                 try:
                     print "Update OVS Interface"
                     new_OVS_interface = OVSInterface.objects.get(pk = row["_uuid"])
+                    new_OVS_interface.owner_host  = host_info
                     new_OVS_interface.admin_state = row["admin_state"]
                     new_OVS_interface.bfd =row["bfd"]
                     new_OVS_interface.bfd_status =row["bfd_status"]
@@ -251,6 +253,7 @@ class HostViewSet(mixins.ListModelMixin,
                     print "add OVS Interface" 
                     new_OVS_interface = OVSInterface (
                                                     _uuid = row["_uuid"],
+                                                    owner_host  = host_info,
                                                     admin_state = row["admin_state"],
                                                     bfd =row["bfd"],
                                                     bfd_status =row["bfd_status"],
@@ -361,18 +364,17 @@ class HostViewSet(mixins.ListModelMixin,
         serializer = self.serializer_class(host_info)
         return Response(serializer.data)    
     
-    
 class OpenvSwitchViewSet(viewsets.ModelViewSet):
     queryset = OpenvSwitch.objects.all()
     serializer_class = OpenvSwitchSerializer
     
+class OVSPortViewSet(viewsets.ModelViewSet):
+    queryset = OVSPort.objects.all()
+    serializer_class = OVSPortSerializer    
+    
 class OVSBridgeViewSet(viewsets.ModelViewSet):
     queryset = OVSBridge.objects.all()
     serializer_class = OVSBridgeSerializer
-    
-class OVSPortViewSet(viewsets.ModelViewSet):
-    queryset = OVSPort.objects.all()
-    serializer_class = OVSPortSerializer
     
 class OVSInterfaceViewSet(viewsets.ModelViewSet):
     queryset = OVSInterface.objects.all()
