@@ -9,16 +9,9 @@ Created on May 4, 2016
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from sfc.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES, \
-    data_plane_locator, service_function_chain, service_function_locator, \
-    rendered_service_path, rendered_service_path_hop_locator
-from sfc.models import service_function_forwarder, service_function
+from sfc.models import LANGUAGE_CHOICES, STYLE_CHOICES
+from sfc.models import ServiceFunction, ServiceFunctionChain, FlowClassifier, ServiceFunctionGroup
 
-
-class SnippetSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Snippet
-        fields = ('id', 'title', 'code', 'linenos', 'language', 'style')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -30,41 +23,46 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ('url', 'name')
 
-class service_function_Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = service_function
-        fields = ('id', 'alias','type','ip_mgmt_address','nsh_aware')    
-        
-class service_function_forwarder_Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = service_function_forwarder
-        fields = ('id', 'alias','type','ip_mgmt_address','data_plane')
-
+class ServiceFunctionChainSerializer(serializers.HyperlinkedModelSerializer):
+    flow_classifier = serializers.PrimaryKeyRelatedField(many=True,read_only=True)
+    service_function_groups = serializers.PrimaryKeyRelatedField(many=True,read_only=True)
     
-class data_plane_locator_Serializer(serializers.ModelSerializer):
     class Meta:
-        model = data_plane_locator
-        fields = ('service_function', 'service_function_forwarder','id','mac','vlan_id','transport','ip_mgmt_address','nsh_aware')  
+        model = ServiceFunctionChain
+        fields = ('id', 'tenant_id','name','description','service_function_groups','flow_classifier','chain_parameters','active')
 
 
-class service_function_chain_Serializer(serializers.ModelSerializer):
+class ServiceFunctionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = service_function_chain
-        fields = ('id', 'symmetric','service_functions')
-        
-class service_function_locator_Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = service_function_locator
-        fields = ('service_function_chain','service_function','id')  
-        
-class rendered_service_path_Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = rendered_service_path
-        fields = ('id', 'alias','starting_index','service_chain_name','rendered_service_path_hop')        
+        model = ServiceFunction
+        fields = ('id', 'tenant_id','name','description','ingress','egress','service_function_parameters','Service_function_groups')    
 
-class rendered_service_path_hop_locator_Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = rendered_service_path_hop_locator
-        fields = ('rendered_service_path', 'data_plane_locator','id','hop_number','service_index')        
+
+class ServiceFunctionGroupsSerializer(serializers.HyperlinkedModelSerializer):
+    service_functions                             = serializers.PrimaryKeyRelatedField(many=True,read_only=True)
     
+    class Meta:
+        model = ServiceFunctionGroup
+        fields = ('id', 'tenant_id','name','description','service_function_chain','service_functions')    
+
+
+class FlowClassifierSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = FlowClassifier
+        fields = ('id', 
+                  'tenant_id',
+                  'name',
+                  'description',
+                  'ethertype',
+                  'protocol',
+                  'source_port_range_min',
+                  'source_port_range_max',
+                  'destination_port_range_min',
+                  'destination_port_range_max',
+                  'source_ip_prefix',
+                  'destination_ip_prefix',
+                  'logical_source_port',
+                  'logical_destination_port',
+                  'l7_parameters',
+                  'service_function_chain')
 
